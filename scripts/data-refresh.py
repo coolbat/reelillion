@@ -79,18 +79,24 @@ def movie_query(condition, limit=300):
         FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }
         FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }
         FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }
+        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q24862. }
         SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
     } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT ''' + str(limit)
-    # Bounded direct types keep broad queries within the public endpoint budget;
-    # release dates and runtimes are consolidated locally, not by a huge GROUP BY.
+    # Accept film subclasses (including anime film), rather than a short direct
+    # P31 allowlist that silently excludes internationally prominent features.
+    # Dates/runtimes are consolidated locally to keep the query bounded.
     return '''SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {
         ''' + condition.replace('wdt:P136/wdt:P279*','wdt:P136') + '''
         ?film wdt:P31 ?kind; wdt:P577 ?date;
             wdt:P2047 ?duration; wikibase:sitelinks ?links.
-        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }
+        ?kind wdt:P279* wd:Q11424.
         FILTER(?duration >= 40)
         ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.
         FILTER(!REGEX(STR(?article), "miniseries|television_series|TV_series|episode|Holiday_Special", "i"))
+        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }
+        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }
+        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }
+        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q24862. }
     } ORDER BY DESC(?links) LIMIT ''' + str(limit*5)
 
 
@@ -113,7 +119,8 @@ def definitions():
     ]:
         result.append({'id': 'genre-' + slug(name), 'text': 'Name ' + ('an ' if name == 'animated' else 'a ') + name + ' movie' + (' released before 2000.' if name == 'drama' else '.'),
             'category': 'genre', 'description': 'A feature-length film classified as ' + name + ' on Wikidata.',
-            'condition': '?film wdt:P136/wdt:P279* wd:' + qid + '.', 'packs': tags})
+            'condition': ('?film wdt:P31/wdt:P279* wd:Q202866.' if name=='animated'
+                else '?film wdt:P136/wdt:P279* wd:' + qid + '.'), 'packs': tags})
     for country, qid in [('Japan','Q17'),('France','Q142'),('India','Q668'),
                           ('Italy','Q38'),('Germany','Q183'),('United Kingdom','Q145')]:
         result.append({'id':'country-'+slug(country), 'text':'Name a movie produced in '+country+'.',
@@ -202,7 +209,8 @@ def enrich_catalogue(movies, prompts):
                 if qid in movies and prop in properties:
                     movies[qid].setdefault(properties[prop],[]).append(row['value']['value'].split('/')[-1])
             if i%20==0: print('classify',i,'/',len(batches),flush=True)
-    genre_ids=sorted({qid for movie in movies.values() for qid in movie.get('genres',[])})
+    genre_ids=sorted({qid for movie in movies.values() for qid in movie.get('genres',[])}
+        | {qid for movie in movies.values() for qid in movie.get('instances',[])})
     genre_targets={definition['id']:re.search(r'wd:(Q\d+)',definition['condition']).group(1)
         for definition in definitions() if definition['category']=='genre'}
     roots=' '.join('wd:'+qid for qid in set(genre_targets.values()))
@@ -224,7 +232,8 @@ def enrich_catalogue(movies, prompts):
             qualifies=target in movie.get(field,[])
             if field=='genres':
                 qualifies=qualifies or any(target in ancestors.get(genre,set()) for genre in movie.get('genres',[]))
-                if target=='Q202866': qualifies=qualifies or target in movie.get('instances',[])
+                if target=='Q202866':
+                    qualifies=qualifies or any(target in ancestors.get(kind,set()) for kind in movie.get('instances',[]))
             if prompt['id']=='genre-drama' and movie['year']>=2000:
                 qualifies=False
             if qualifies: existing.add(movie['id'])
@@ -352,6 +361,7 @@ def main():
     # Complete the same source-condition and finalisation passes used for the
     # reviewed launch snapshot. A child failure aborts instead of implying that
     # the partially written working-tree snapshot is ready for release.
+    subprocess.run([sys.executable,str(ROOT/'scripts/data-coverage-patch.py'),'--skip-credit-audit'],check=True)
     subprocess.run([sys.executable,str(ROOT/'scripts/data-voice-credits.py')],check=True)
     subprocess.run([sys.executable,str(ROOT/'scripts/data-finalize.py')],check=True)
     print(json.dumps(json.loads((OUT/'metadata.json').read_text()),indent=2),flush=True)

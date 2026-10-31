@@ -118,6 +118,8 @@ metadata={
         'Full holiday editions and seven-round premium themed packs are not available.',
     ],
 }
+if previous_metadata.get('catalogueCorrection'):
+    metadata['catalogueCorrection']=previous_metadata['catalogueCorrection']
 for name,value,indent in [('movies',movies,None),('prompts',prompts,None),
                          ('provenance',provenance,2),('metadata',metadata,2),('pageviews',observations,None)]:
     (OUT/(name+'.json')).write_text(json.dumps(value,ensure_ascii=False,

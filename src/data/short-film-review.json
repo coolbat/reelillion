@@ -1,0 +1,161 @@
+{
+  "reviewedAt": "2026-10-31T01:17:32.495996+00:00",
+  "shortFilmClass": "Q24862",
+  "featureFilmClass": "Q24869",
+  "query": "SELECT DISTINCT ?kind WHERE { VALUES ?kind { wd:Q104840802 wd:Q1054574 wd:Q10590726 wd:Q112158242 wd:Q11424 wd:Q115768274 wd:Q117467240 wd:Q120243801 wd:Q1251417 wd:Q1261214 wd:Q14946528 wd:Q15116915 wd:Q1535153 wd:Q17123180 wd:Q18011172 wd:Q200092 wd:Q202866 wd:Q20650540 wd:Q240862 wd:Q24862 wd:Q2927074 wd:Q31235 wd:Q3334776 wd:Q506240 wd:Q526877 wd:Q56884562 wd:Q58483083 wd:Q61283808 wd:Q678345 wd:Q842256 } ?kind wdt:P279* wd:Q24862. }",
+  "returnedShortClasses": [
+    "Q1261214",
+    "Q24862"
+  ],
+  "excludedMovies": [
+    {
+      "id": "Q102396311",
+      "title": "Alien Xmas",
+      "year": 2020,
+      "aliases": [],
+      "wiki": "https://en.wikipedia.org/wiki/Alien_Xmas",
+      "sitelinks": 6,
+      "runtime": 42.0,
+      "weight": 15685,
+      "weightSource": "wikipedia-pageviews",
+      "annualPageviews": 15685,
+      "pageviewMonths": 12,
+      "genres": [
+        "Q157394",
+        "Q157443",
+        "Q202866",
+        "Q319221",
+        "Q471839",
+        "Q1361932",
+        "Q28026639"
+      ],
+      "instances": [
+        "Q202866",
+        "Q1261214",
+        "Q11424"
+      ],
+      "countries": [
+        "Q30"
+      ],
+      "instanceAncestors": [
+        "Q11424",
+        "Q202866"
+      ]
+    },
+    {
+      "id": "Q1551248",
+      "title": "The Return of Bruno",
+      "year": 1987,
+      "aliases": [],
+      "wiki": "https://en.wikipedia.org/wiki/The_Return_of_Bruno_(film)",
+      "sitelinks": 6,
+      "runtime": 56.0,
+      "weight": 8932,
+      "weightSource": "wikidata-sitelinks-fallback",
+      "annualPageviews": null,
+      "pageviewMonths": 0,
+      "countries": [
+        "Q30"
+      ],
+      "instances": [
+        "Q24862"
+      ],
+      "genres": [
+        "Q842256"
+      ],
+      "instanceAncestors": [
+        "Q11424"
+      ]
+    },
+    {
+      "id": "Q1812599",
+      "title": "Deep Sea 3D",
+      "year": 2006,
+      "aliases": [],
+      "wiki": "https://en.wikipedia.org/wiki/Deep_Sea_3D",
+      "sitelinks": 11,
+      "runtime": 41.0,
+      "weight": 30021,
+      "weightSource": "wikidata-sitelinks-fallback",
+      "annualPageviews": null,
+      "pageviewMonths": 0,
+      "countries": [
+        "Q16",
+        "Q30"
+      ],
+      "instances": [
+        "Q11424",
+        "Q24862"
+      ],
+      "studios": [
+        "Q126399",
+        "Q1654103"
+      ],
+      "genres": [
+        "Q1760864"
+      ],
+      "instanceAncestors": [
+        "Q11424"
+      ]
+    },
+    {
+      "id": "Q2467590",
+      "title": "Born to Be Wild",
+      "year": 2011,
+      "aliases": [],
+      "wiki": "https://en.wikipedia.org/wiki/Born_to_Be_Wild_(2011_film)",
+      "sitelinks": 9,
+      "runtime": 40.0,
+      "weight": 20097,
+      "weightSource": "wikidata-sitelinks-fallback",
+      "annualPageviews": null,
+      "pageviewMonths": 0,
+      "genres": [
+        "Q93204",
+        "Q1760864"
+      ],
+      "awards": [
+        "Q135498"
+      ],
+      "countries": [
+        "Q30"
+      ],
+      "instances": [
+        "Q11424",
+        "Q24862"
+      ],
+      "instanceAncestors": [
+        "Q11424"
+      ]
+    },
+    {
+      "id": "Q7774472",
+      "title": "The White Bus",
+      "year": 1967,
+      "aliases": [],
+      "wiki": "https://en.wikipedia.org/wiki/The_White_Bus",
+      "sitelinks": 8,
+      "runtime": 46.0,
+      "weight": 15879,
+      "weightSource": "wikidata-sitelinks-fallback",
+      "annualPageviews": null,
+      "pageviewMonths": 0,
+      "genres": [
+        "Q130232"
+      ],
+      "studios": [
+        "Q2371191"
+      ],
+      "countries": [
+        "Q145"
+      ],
+      "instances": [
+        "Q24862"
+      ],
+      "instanceAncestors": [
+        "Q11424"
+      ]
+    }
+  ],
+  "pageviewRequests": 0
+}

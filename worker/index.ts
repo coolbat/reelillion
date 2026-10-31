@@ -127,11 +127,13 @@ async function expireDailySession(db: Database, session: SessionRow): Promise<bo
   return true;
 }
 async function sessionView(db: Database, session: SessionRow) {
+  const answers = await answerRows(db, session.id);
+  const serverNow = Date.now();
   return {
     sessionId: session.id, date: session.date, number: puzzleNumber(session.date), mode: session.mode,
     accessible: !!session.accessible, secondsPerRound: session.accessible ? 40 : 20,
     prompts: sessionPrompts(session).map(publicPrompt), currentIndex: session.current_index,
-    deadline: session.deadline, answers: await answerRows(db, session.id),
+    deadline: session.deadline, serverNow, answers,
     completed: session.completed_at !== null, scoringBasis: SCORING_BASIS,
   };
 }

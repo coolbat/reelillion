@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import type { AnswerResult, PublicMovie, PublicPrompt } from "../lib/game";
 import { theme } from "../config";
+import { alignClock, roundSeconds } from "../lib/timing";
 
 type Mode = "daily" | "archive" | "practice";
 interface Daily {
@@ -20,6 +21,8 @@ interface Session {
   prompts: PublicPrompt[];
   currentIndex: number;
   deadline: number;
+  serverNow?: number;
+  clockOffset?: number;
   answers: AnswerResult[];
   completed: boolean;
   scoringBasis: string;
@@ -213,9 +216,7 @@ export default function Game() {
     };
   }, [input, session?.currentIndex, session?.answers.length]);
   const answer = session?.answers.find((a) => a.index === session.currentIndex);
-  const seconds = session
-    ? Math.max(0, Math.ceil((session.deadline - now) / 1000))
-    : 20;
+  const seconds = session ? roundSeconds(session, now) : 20;
   useEffect(() => {
     if (session && !answer && !session.completed && seconds === 0 && !loading) {
       const round = `${session.sessionId}:${session.currentIndex}`;
@@ -292,7 +293,7 @@ export default function Game() {
         date: mode === "archive" ? archiveDate : undefined,
         accessible,
       });
-      setSession(s);
+      setSession(alignClock(s));
       setInput("");
       setResults(null);
       setNow(Date.now());
@@ -325,7 +326,7 @@ export default function Game() {
         index: session.currentIndex,
         answer: value,
       });
-      setSession(data.session);
+      setSession(alignClock(data.session));
       if (!data.recognized) {
         setError(
           data.message ||
@@ -355,7 +356,7 @@ export default function Game() {
       setSuggestions([]);
       setSelected(-1);
       setShowSuggestions(true);
-      setSession(s);
+      setSession(alignClock(s));
       setNow(Date.now());
     } catch (e) {
       setError((e as Error).message);

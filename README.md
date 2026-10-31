@@ -9,6 +9,7 @@ The product uses English copy and a shared New York daily schedule. Full rules a
 Use **Node.js 24** (see `.nvmrc`). Python 3 is required for source-data refreshes and the data-tool checks.
 
 ```sh
+nvm install
 nvm use
 npm ci
 npm run db:local

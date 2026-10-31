@@ -9,8 +9,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 class DataToolChecks(unittest.TestCase):
     def test_refresh_tools_compile_without_running_network_requests(self):
-        for name in ('data-refresh.py', 'data-finalize.py', 'data-voice-credits.py'):
-            path = ROOT / 'scripts' / name
+        for path in (ROOT / 'scripts').glob('data-*.py'):
             compile(path.read_text(), str(path), 'exec')
 
     def test_old_facts_cannot_overwrite_a_new_catalogue(self):

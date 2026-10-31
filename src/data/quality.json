@@ -22,8 +22,8 @@
   },
   {
     "id": "cast-morgan-freeman",
-    "answers": 100,
-    "topThreePriorShare": 0.2178,
+    "answers": 99,
+    "topThreePriorShare": 0.2179,
     "rarestPriorShare": 0.0000072,
     "measured": 5
   },
@@ -99,7 +99,7 @@
   },
   {
     "id": "cast-bruce-willis",
-    "answers": 115,
+    "answers": 114,
     "topThreePriorShare": 0.1247,
     "rarestPriorShare": 0.0000078,
     "measured": 9
@@ -134,8 +134,8 @@
   },
   {
     "id": "cast-anthony-hopkins",
-    "answers": 96,
-    "topThreePriorShare": 0.2043,
+    "answers": 95,
+    "topThreePriorShare": 0.2044,
     "rarestPriorShare": 0.0000094,
     "measured": 0
   },
@@ -162,8 +162,8 @@
   },
   {
     "id": "cast-johnny-depp",
-    "answers": 79,
-    "topThreePriorShare": 0.1582,
+    "answers": 78,
+    "topThreePriorShare": 0.1583,
     "rarestPriorShare": 0.0000283,
     "measured": 3
   },
@@ -253,29 +253,29 @@
   },
   {
     "id": "genre-horror",
-    "answers": 420,
-    "topThreePriorShare": 0.0608,
+    "answers": 421,
+    "topThreePriorShare": 0.0607,
     "rarestPriorShare": 0.0000053,
     "measured": 10
   },
   {
     "id": "genre-science-fiction",
-    "answers": 555,
-    "topThreePriorShare": 0.0405,
+    "answers": 561,
+    "topThreePriorShare": 0.0399,
     "rarestPriorShare": 0.000003,
-    "measured": 26
+    "measured": 25
   },
   {
     "id": "genre-comedy",
     "answers": 1245,
     "topThreePriorShare": 0.0296,
     "rarestPriorShare": 5e-7,
-    "measured": 36
+    "measured": 35
   },
   {
     "id": "genre-drama",
-    "answers": 1256,
-    "topThreePriorShare": 0.0297,
+    "answers": 1265,
+    "topThreePriorShare": 0.0292,
     "rarestPriorShare": 0.0000021,
     "measured": 24
   },
@@ -288,14 +288,14 @@
   },
   {
     "id": "genre-fantasy",
-    "answers": 685,
-    "topThreePriorShare": 0.0262,
+    "answers": 699,
+    "topThreePriorShare": 0.0253,
     "rarestPriorShare": 6e-7,
-    "measured": 23
+    "measured": 22
   },
   {
     "id": "genre-musical",
-    "answers": 378,
+    "answers": 377,
     "topThreePriorShare": 0.051,
     "rarestPriorShare": 0.0000011,
     "measured": 10
@@ -309,16 +309,16 @@
   },
   {
     "id": "genre-animated",
-    "answers": 502,
-    "topThreePriorShare": 0.0557,
-    "rarestPriorShare": 9e-7,
+    "answers": 529,
+    "topThreePriorShare": 0.0524,
+    "rarestPriorShare": 8e-7,
     "measured": 18
   },
   {
     "id": "country-japan",
-    "answers": 246,
-    "topThreePriorShare": 0.0732,
-    "rarestPriorShare": 0.0000644,
+    "answers": 269,
+    "topThreePriorShare": 0.0798,
+    "rarestPriorShare": 0.0000505,
     "measured": 5
   },
   {
@@ -352,8 +352,8 @@
   {
     "id": "country-united-kingdom",
     "answers": 818,
-    "topThreePriorShare": 0.037,
-    "rarestPriorShare": 0.0000031,
+    "topThreePriorShare": 0.0369,
+    "rarestPriorShare": 0.000003,
     "measured": 30
   },
   {
@@ -400,16 +400,16 @@
   },
   {
     "id": "decade-1950",
-    "answers": 182,
-    "topThreePriorShare": 0.1082,
-    "rarestPriorShare": 0.0000334,
+    "answers": 183,
+    "topThreePriorShare": 0.1068,
+    "rarestPriorShare": 0.000033,
     "measured": 2
   },
   {
     "id": "decade-1960",
-    "answers": 285,
-    "topThreePriorShare": 0.0742,
-    "rarestPriorShare": 0.000025,
+    "answers": 286,
+    "topThreePriorShare": 0.0736,
+    "rarestPriorShare": 0.0000248,
     "measured": 6
   },
   {
@@ -421,57 +421,57 @@
   },
   {
     "id": "decade-1980",
-    "answers": 458,
-    "topThreePriorShare": 0.0728,
+    "answers": 464,
+    "topThreePriorShare": 0.0702,
     "rarestPriorShare": 0.0000017,
     "measured": 14
   },
   {
     "id": "decade-1990",
-    "answers": 793,
-    "topThreePriorShare": 0.0478,
+    "answers": 798,
+    "topThreePriorShare": 0.0473,
     "rarestPriorShare": 9e-7,
     "measured": 20
   },
   {
     "id": "decade-2000",
-    "answers": 1174,
-    "topThreePriorShare": 0.0291,
-    "rarestPriorShare": 0.0000021,
+    "answers": 1182,
+    "topThreePriorShare": 0.0287,
+    "rarestPriorShare": 0.000002,
     "measured": 26
   },
   {
     "id": "decade-2010",
-    "answers": 1124,
-    "topThreePriorShare": 0.0205,
+    "answers": 1131,
+    "topThreePriorShare": 0.0203,
     "rarestPriorShare": 6e-7,
     "measured": 16
   },
   {
     "id": "decade-2020",
-    "answers": 440,
-    "topThreePriorShare": 0.0881,
+    "answers": 442,
+    "topThreePriorShare": 0.0872,
     "rarestPriorShare": 0.000002,
-    "measured": 46
+    "measured": 45
   },
   {
     "id": "runtime-under-90",
-    "answers": 720,
-    "topThreePriorShare": 0.0763,
+    "answers": 721,
+    "topThreePriorShare": 0.0753,
     "rarestPriorShare": 0.0000012,
-    "measured": 15
+    "measured": 14
   },
   {
     "id": "runtime-over-120",
-    "answers": 1410,
-    "topThreePriorShare": 0.0216,
-    "rarestPriorShare": 0.0000014,
+    "answers": 1425,
+    "topThreePriorShare": 0.0214,
+    "rarestPriorShare": 0.0000013,
     "measured": 53
   },
   {
     "id": "runtime-over-150",
-    "answers": 354,
-    "topThreePriorShare": 0.0647,
+    "answers": 356,
+    "topThreePriorShare": 0.0646,
     "rarestPriorShare": 0.0000113,
     "measured": 11
   },

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-31T00:55:47.444856+00:00",
+  "generatedAt": "2026-10-31T01:17:32.495996+00:00",
   "license": "Wikidata structured facts and Wikimedia pageview metrics: CC0.",
   "pageviewStart": "2025-10-01",
   "pageviewEnd": "2026-09-30",
   "pageviewMonths": 12,
-  "movies": 4994,
+  "movies": 5024,
   "prompts": 69,
-  "measuredMovies": 135,
-  "fallbackMovies": 4859,
+  "measuredMovies": 134,
+  "fallbackMovies": 4890,
   "fallbackMedianMeasuredAnnualViews": 223300,
   "pageviewFetchStatus": "Partial: provider returned HTTP 429; uncached requests stopped.",
   "sources": [
@@ -22,5 +22,8 @@
     "Estimated familiarity is not a player selection percentage or score percentile.",
     "Runtime, release year and genre inherit Wikidata source ambiguity.",
     "Full holiday editions and seven-round premium themed packs are not available."
-  ]
+  ],
+  "catalogueCorrection": "Replaced direct-class allowlist with film/animated-film subclass closure; added missing international manifest films with complete per-entity facts. No pageview requests.",
+  "shortFilmCorrection": "Excluded five Wikidata short films or subclasses despite running time >=40 minutes.",
+  "fallbackReferenceSource": "Median of the original 135 successful annual measurements, preserved during bounded correction."
 }

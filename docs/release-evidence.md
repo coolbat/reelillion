@@ -39,3 +39,11 @@ Screenshots, raw build log and a redacted JSON acceptance report are saved local
 - Independent human editorial review and a 50–100-player score calibration remain pending. Of 4,994 films, 135 have measured annual pageviews and 4,859 use an explicit Wikidata sitelink fallback. Those weights are estimates, never real player counts.
 - Payments, advertisement unlocks, old paid history, dedicated paid Unlimited and the five fully playable packs are not connected. Their pages label them as in development; general Practice is free.
 - Rarest Answers reverse publication, outreach, directory submissions and retention measurement have not been performed by this repository release.
+
+## Follow-up data and clock corrections
+
+A production-browser answer exposed a systematic direct-class discovery filter: legal anime-film subclasses such as *Spirited Away* were missing. The corrected source uses film and animated-film class ancestry, adds 35 sourced international features, covers a 50-film regression manifest and removes five Wikidata short films even where their recorded runtime was 40 minutes or more. The resulting snapshot has 5,024 movies and the same 69 prompt IDs and daily schedule. Of these, 134 have measured annual pageviews; 4,890 have explicitly tagged fallback estimates. No additional pageview requests or production D1 edits were made for this correction. Original Daily locked scores are preserved.
+
+The API also returns `serverNow`. The client aligns its countdown to that clock and caps it at the selected allowance, avoiding an apparent 41-second opening caused by a small client/server clock difference. Tests cover clock offsets up to twenty minutes in both directions; the stored server deadline remains the authority.
+
+The complete final commit, CI run, Cloudflare Git build, Worker version, source/asset match and final production acceptance are collected by the release owner in the local ignored release artifacts after that follow-up commit is deployed. An added fixture proves that finalization refuses foreign/stale movie facts without overwriting the catalogue, and simulated-next-day SQL tests cover Archive scoring and statistics isolation.

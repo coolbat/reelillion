@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {getDailyPrompts, movies, prompts, dataMetadata} from '../src/data/catalog';
 
 test('daily schedule is deterministic, seven distinct categories and all answers exist', () => {
@@ -57,4 +58,33 @@ test('animated voice performances qualify for actor prompts', () => {
   const toyStory = movies.find(movie => movie.title === 'Toy Story' && movie.year === 1995);
   const hanks = prompts.find(prompt => prompt.id === 'cast-tom-hanks');
   assert.ok(toyStory && hanks?.movieIds.includes(toyStory.id));
+});
+
+test('all fifty core international movies survive catalogue refreshes', () => {
+  const required = JSON.parse(fs.readFileSync(new URL('../src/data/required-movies.json', import.meta.url), 'utf8')) as {wiki:string}[];
+  assert.equal(required.length, 50);
+  const known = new Set(movies.map(movie => decodeURIComponent(movie.wiki)));
+  for (const movie of required) assert.ok(known.has(decodeURIComponent(movie.wiki)), `Missing core film: ${movie.wiki}`);
+});
+
+test('anime subclasses are accepted as films and animated answers', () => {
+  const spirited = movies.find(movie => movie.title === 'Spirited Away');
+  assert.ok(spirited, 'Spirited Away must be recognised');
+  assert.equal(spirited.year, 2001);
+  for (const id of ['decade-2000', 'country-japan', 'genre-animated', 'genre-fantasy']) {
+    assert.ok(prompts.find(prompt => prompt.id === id)?.movieIds.includes(spirited.id), `Spirited Away excluded from ${id}`);
+  }
+  const ancestry = JSON.parse(fs.readFileSync(new URL('../src/data/type-ancestors.json', import.meta.url), 'utf8')) as Record<string,string[]>;
+  assert.ok(ancestry.Q20650540.includes('Q11424'));
+  assert.ok(ancestry.Q20650540.includes('Q202866'));
+});
+
+test('short films are excluded even when their running time reaches forty minutes', () => {
+  const ancestry = JSON.parse(fs.readFileSync(new URL('../src/data/type-ancestors.json', import.meta.url), 'utf8')) as Record<string,string[]>;
+  for (const movie of movies as (typeof movies[number] & {instances?:string[]})[]) {
+    assert.ok(!movie.instances?.some(kind => kind === 'Q24862' || ancestry[kind]?.includes('Q24862')), `Short film admitted: ${movie.title}`);
+  }
+  for (const id of ['Q102396311','Q1551248','Q1812599','Q2467590','Q7774472']) {
+    assert.ok(!movies.some(movie => movie.id === id), `Known short film ${id} returned`);
+  }
 });
