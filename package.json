@@ -1,0 +1,33 @@
+{
+  "name": "reelillion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "check": "astro check && tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "preview": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "db:local": "wrangler d1 migrations apply reelillion --local",
+    "data:check": "node scripts/data-validate.mjs",
+    "ci:gate": "node scripts/verify-github-checks.mjs",
+    "deploy:ci": "node scripts/require-cloudflare-ci.mjs && npm run ci:gate && wrangler d1 migrations apply reelillion --remote && wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "7.4.4",
+    "@astrojs/preact": "6.1.1",
+    "preact": "^10.29.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@cloudflare/workers-types": "5.20261030.1",
+    "@types/node": "^22.19.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "wrangler": "4.156.0"
+  }
+}

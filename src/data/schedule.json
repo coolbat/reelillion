@@ -1,0 +1,362 @@
+[
+  {
+    "date": "2026-10-30",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1940",
+      "genre-romantic-comedy",
+      "country-italy",
+      "runtime-over-150",
+      "cast-tom-hanks",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1950",
+      "genre-fantasy",
+      "country-germany",
+      "runtime-under-90",
+      "cast-meryl-streep",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1960",
+      "genre-musical",
+      "country-united-kingdom",
+      "runtime-over-120",
+      "cast-samuel-l-jackson",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1970",
+      "genre-western",
+      "country-japan",
+      "runtime-over-150",
+      "cast-morgan-freeman",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-03",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1980",
+      "genre-animated",
+      "country-france",
+      "runtime-under-90",
+      "cast-robert-de-niro",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-04",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1990",
+      "genre-horror",
+      "country-india",
+      "runtime-over-120",
+      "cast-al-pacino",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-05",
+    "promptIds": [
+      "studio-pixar",
+      "decade-2000",
+      "genre-science-fiction",
+      "country-italy",
+      "runtime-over-150",
+      "cast-denzel-washington",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-06",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-2010",
+      "genre-comedy",
+      "country-germany",
+      "runtime-under-90",
+      "cast-cate-blanchett",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-2020",
+      "genre-drama",
+      "country-united-kingdom",
+      "runtime-over-120",
+      "cast-tilda-swinton",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1930",
+      "genre-romantic-comedy",
+      "country-japan",
+      "runtime-over-150",
+      "cast-nicole-kidman",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-09",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1940",
+      "genre-fantasy",
+      "country-france",
+      "runtime-under-90",
+      "cast-julianne-moore",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-10",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1950",
+      "genre-musical",
+      "country-india",
+      "runtime-over-120",
+      "cast-sigourney-weaver",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-11",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1960",
+      "genre-western",
+      "country-italy",
+      "runtime-over-150",
+      "cast-susan-sarandon",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-12",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1970",
+      "genre-animated",
+      "country-germany",
+      "runtime-under-90",
+      "cast-jack-nicholson",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-13",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1980",
+      "genre-horror",
+      "country-united-kingdom",
+      "runtime-over-120",
+      "cast-bruce-willis",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-14",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1990",
+      "genre-science-fiction",
+      "country-japan",
+      "runtime-over-150",
+      "cast-nicolas-cage",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-15",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-2000",
+      "genre-comedy",
+      "country-france",
+      "runtime-under-90",
+      "cast-keanu-reeves",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-16",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-2010",
+      "genre-drama",
+      "country-india",
+      "runtime-over-120",
+      "cast-matt-damon",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-17",
+    "promptIds": [
+      "studio-pixar",
+      "decade-2020",
+      "genre-romantic-comedy",
+      "country-italy",
+      "runtime-over-150",
+      "cast-brad-pitt",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-18",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1930",
+      "genre-fantasy",
+      "country-germany",
+      "runtime-under-90",
+      "cast-anthony-hopkins",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-19",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1940",
+      "genre-musical",
+      "country-united-kingdom",
+      "runtime-over-120",
+      "cast-michael-caine",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-20",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1950",
+      "genre-western",
+      "country-japan",
+      "runtime-over-150",
+      "cast-judi-dench",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-21",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1960",
+      "genre-animated",
+      "country-france",
+      "runtime-under-90",
+      "cast-maggie-smith",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-22",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1970",
+      "genre-horror",
+      "country-india",
+      "runtime-over-120",
+      "cast-johnny-depp",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-23",
+    "promptIds": [
+      "studio-pixar",
+      "decade-1980",
+      "genre-science-fiction",
+      "country-italy",
+      "runtime-over-150",
+      "cast-michelle-yeoh",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-24",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-1990",
+      "genre-comedy",
+      "country-germany",
+      "runtime-under-90",
+      "cast-jackie-chan",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-2000",
+      "genre-drama",
+      "country-united-kingdom",
+      "runtime-over-120",
+      "cast-kate-winslet",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "promptIds": [
+      "studio-pixar",
+      "decade-2010",
+      "genre-romantic-comedy",
+      "country-japan",
+      "runtime-over-150",
+      "cast-willem-dafoe",
+      "award-palme-d-or"
+    ]
+  },
+  {
+    "date": "2026-11-27",
+    "promptIds": [
+      "studio-walt-disney-pictures",
+      "decade-2020",
+      "genre-fantasy",
+      "country-france",
+      "runtime-under-90",
+      "cast-emma-thompson",
+      "award-academy-award-for-best-picture"
+    ]
+  },
+  {
+    "date": "2026-11-28",
+    "promptIds": [
+      "studio-dreamworks-animation",
+      "decade-1930",
+      "genre-musical",
+      "country-india",
+      "runtime-over-120",
+      "cast-dustin-hoffman",
+      "award-palme-d-or"
+    ]
+  }
+]

@@ -1,0 +1,289 @@
+{
+  "cast-tom-hanks": {
+    "person": "Tom Hanks",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Tom_Hanks> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q113641997",
+      "Q171048",
+      "Q182254",
+      "Q18517638",
+      "Q187266",
+      "Q187278",
+      "Q862197"
+    ]
+  },
+  "cast-meryl-streep": {
+    "person": "Meryl Streep",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Meryl_Streep> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q128798957",
+      "Q465275"
+    ]
+  },
+  "cast-samuel-l-jackson": {
+    "person": "Samuel L. Jackson",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Samuel_L._Jackson> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q1061539",
+      "Q1523217",
+      "Q213326",
+      "Q24832112"
+    ]
+  },
+  "cast-morgan-freeman": {
+    "person": "Morgan Freeman",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Morgan_Freeman> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q2608065",
+      "Q330113"
+    ]
+  },
+  "cast-robert-de-niro": {
+    "person": "Robert De Niro",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Robert_De_Niro> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-al-pacino": {
+    "person": "Al Pacino",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Al_Pacino> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-denzel-washington": {
+    "person": "Denzel Washington",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Denzel_Washington> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-cate-blanchett": {
+    "person": "Cate Blanchett",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Cate_Blanchett> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q10298666",
+      "Q22970530",
+      "Q73895818"
+    ]
+  },
+  "cast-tilda-swinton": {
+    "person": "Tilda Swinton",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Tilda_Swinton> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q28065409",
+      "Q73895818"
+    ]
+  },
+  "cast-nicole-kidman": {
+    "person": "Nicole Kidman",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Nicole_Kidman> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q126800"
+    ]
+  },
+  "cast-julianne-moore": {
+    "person": "Julianne Moore",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Julianne_Moore> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-sigourney-weaver": {
+    "person": "Sigourney Weaver",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Sigourney_Weaver> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q104905",
+      "Q9321426"
+    ]
+  },
+  "cast-susan-sarandon": {
+    "person": "Susan Sarandon",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Susan_Sarandon> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q1131380"
+    ]
+  },
+  "cast-jack-nicholson": {
+    "person": "Jack Nicholson",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Jack_Nicholson> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-bruce-willis": {
+    "person": "Bruce Willis",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Bruce_Willis> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q23796643",
+      "Q245366",
+      "Q616842"
+    ]
+  },
+  "cast-nicolas-cage": {
+    "person": "Nicolas Cage",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Nicolas_Cage> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q1061539",
+      "Q1457891",
+      "Q29588607",
+      "Q495850",
+      "Q784444"
+    ]
+  },
+  "cast-keanu-reeves": {
+    "person": "Keanu Reeves",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Keanu_Reeves> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q113641997",
+      "Q115859490",
+      "Q18517638",
+      "Q335340"
+    ]
+  },
+  "cast-matt-damon": {
+    "person": "Matt Damon",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Matt_Damon> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q641315",
+      "Q816857"
+    ]
+  },
+  "cast-brad-pitt": {
+    "person": "Brad Pitt",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Brad_Pitt> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q81205",
+      "Q816857"
+    ]
+  },
+  "cast-anthony-hopkins": {
+    "person": "Anthony Hopkins",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Anthony_Hopkins> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-michael-caine": {
+    "person": "Michael Caine",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Michael_Caine> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q192212",
+      "Q753677"
+    ]
+  },
+  "cast-judi-dench": {
+    "person": "Judi Dench",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Judi_Dench> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q936194"
+    ]
+  },
+  "cast-maggie-smith": {
+    "person": "Maggie Smith",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Maggie_Smith> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q24904727",
+      "Q753677"
+    ]
+  },
+  "cast-johnny-depp": {
+    "person": "Johnny Depp",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Johnny_Depp> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q164417",
+      "Q24904727",
+      "Q275432"
+    ]
+  },
+  "cast-michelle-yeoh": {
+    "person": "Michelle Yeoh",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Michelle_Yeoh> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q487447",
+      "Q60997779"
+    ]
+  },
+  "cast-jackie-chan": {
+    "person": "Jackie Chan",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Jackie_Chan> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q110271518",
+      "Q129193",
+      "Q15055043",
+      "Q22131901",
+      "Q487447"
+    ]
+  },
+  "cast-kate-winslet": {
+    "person": "Kate Winslet",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Kate_Winslet> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q1457891",
+      "Q61782101",
+      "Q752301"
+    ]
+  },
+  "cast-willem-dafoe": {
+    "person": "Willem Dafoe",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Willem_Dafoe> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q132863",
+      "Q465275",
+      "Q61782101",
+      "Q9321426"
+    ]
+  },
+  "cast-emma-thompson": {
+    "person": "Emma Thompson",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Emma_Thompson> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q126796",
+      "Q392530"
+    ]
+  },
+  "cast-dustin-hoffman": {
+    "person": "Dustin Hoffman",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Dustin_Hoffman> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q114707487",
+      "Q129193",
+      "Q15055043",
+      "Q487447"
+    ]
+  },
+  "cast-cary-grant": {
+    "person": "Cary Grant",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Cary_Grant> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-clint-eastwood": {
+    "person": "Clint Eastwood",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Clint_Eastwood> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-harrison-ford": {
+    "person": "Harrison Ford",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Harrison_Ford> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": []
+  },
+  "cast-gene-hackman": {
+    "person": "Gene Hackman",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Gene_Hackman> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q610502"
+    ]
+  },
+  "cast-john-goodman": {
+    "person": "John Goodman",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/John_Goodman> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q124125148",
+      "Q171300",
+      "Q187726",
+      "Q221947",
+      "Q223163",
+      "Q275167",
+      "Q641362",
+      "Q937486"
+    ]
+  },
+  "cast-jeff-bridges": {
+    "person": "Jeff Bridges",
+    "query": "SELECT DISTINCT ?film WHERE { <https://en.wikipedia.org/wiki/Jeff_Bridges> schema:about ?person. ?film wdt:P725 ?person. }",
+    "movieIds": [
+      "Q16386722",
+      "Q1757581",
+      "Q633053"
+    ]
+  }
+}

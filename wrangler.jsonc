@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "reelillion",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-30",
+  "account_id": "a8076357128d3e8be7dca72dbda3e8bf",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "reelillion.com", "custom_domain": true },
+    { "pattern": "www.reelillion.com", "custom_domain": true },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+    "not_found_handling": "404-page",
+    "html_handling": "force-trailing-slash",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "reelillion",
+      "database_id": "fdf59895-335f-489e-bd1e-95f6bdaa24ed",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "observability": { "enabled": true },
+}

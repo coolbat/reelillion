@@ -1,0 +1,40 @@
+# Game API
+
+All requests are same-origin. JSON endpoints send `Cache-Control: no-store`. No API response before a completed session includes a question’s answer list, movie weight, Wikipedia traffic, or tier. Search matches the entire catalogue after three characters, never the current question’s eligible list.
+
+The static Astro build is served by the Worker’s `ASSETS` binding. `DB` must bind a D1 database with `migrations/0001_game.sql` applied. Local development uses the same D1 SQL via Wrangler; production does not fall back to ephemeral memory.
+
+## Endpoints
+
+- `GET /api/daily`: `{date,number,resetAt,prompts,secondsPerRound,scoringBasis}`. Dates and resets use `America/New_York`; `resetAt` is an ISO timestamp. Public prompts have `{id,text,category,description}`.
+- `GET /api/search?q=...`: `{movies:[{id,title,year}]}`, up to eight matches. Fewer than three characters returns an empty list.
+- `GET /api/archive`: `{games:[{date,number,prompts}]}`, previous seven days since launch only.
+- `POST /api/start`: `{deviceId,mode:'daily'|'archive'|'practice',date?,accessible?,pack?}` returns SessionView. Archive requires a previous available date. `accessible:true` sets 40 seconds per round; otherwise 20. A pack needs at least seven edited prompts and otherwise returns 409.
+- `POST /api/answer`: `{sessionId,deviceId,index,answer}`. The answer may be a film title or an autocomplete film ID. An empty string skips. Returns `{recognized,message?,answer?,session}`. An unknown title returns `recognized:false` without locking the round. A known ineligible film locks zero points. A deadline reached on the server locks timeout zero points. Duplicate requests return the same locked answer.
+- `POST /api/next`: `{sessionId,deviceId}` returns SessionView. Starts the next round’s server clock only after the current answer is locked. An expired unanswered current round is timed out first. The final answer automatically completes the session.
+- `GET /api/results?sessionId=...&deviceId=...`: completed sessions only; `{session,total,rounds,participants,percentile,scoringBasis}`. `percentile` is the rounded percentage of completed daily players with a **strictly lower** score; it is null below 20 completed daily sessions and for non-daily games. Display `Top max(1, 100 − percentile)%` in results and share cards. Twenty tied zero-point games therefore produce Top 100%; the sole higher-scoring player among twenty produces Top 5%. Each round includes `{prompt,answer,common,rare,nobody,respondents}`. Common/rare lists contain **actual eligible daily answers only**, and may be empty. `nobody` is an eligible film absent from those recorded daily answers, with a source link and factual year description.
+- `GET /api/health`: checks D1 and returns `{ok,movies,prompts,date}`.
+
+SessionView: `{sessionId,date,number,mode,accessible,secondsPerRound,prompts,currentIndex,deadline,answers,completed,scoringBasis}`. `deadline` is epoch milliseconds. AnswerResult: `{index,promptId,movie,submitted,points,tier,emoji,estimatedShare,playerShare,status,example?}`. Status is `correct`, `incorrect`, `timeout`, `skipped`, or `abandoned`. Shares are fractions, not 0–100 percentages. `playerShare:null` means no eligible recorded responses.
+
+## Persistence and validity
+
+Each device/date has one daily session enforced by a D1 unique index. Calling start again resumes the same session and forfeits any currently unanswered round, implementing the documented close/reopen rule. Previously locked answers are retained. The client should call start once on deliberate start/resume, not on routine renders or background refresh. Once the New York date ends, any unfinished daily session is completed with zero for its remaining rounds on its next API access; it cannot contribute new historical rarity counts.
+
+Film titles normalize case, accents, punctuation, `&`, and initial `The`/`A`/`An`. Exact titles and aliases are preferred. Fuzzy matching allows up to two edits, tightened to zero/one for short titles to avoid accidental recognition. Numeric sequel tokens must match. Autocomplete IDs and explicit `(year)` identify a film family without bypassing remake scoring: qualifying same-title versions are considered, and if several versions qualify the highest public-popularity weight is used.
+
+The score prior normalizes each film’s public-data weight over the prompt’s eligible films. Daily/archive blending uses `(recorded choices + 200 × prior) / (eligible recorded responses + 200)`. Practice always uses the prior and never writes eligible daily statistics. Archive sessions never write eligible statistics; their historical daily count population cannot be changed through archive replay. Score and tier are stored on first successful insertion and never recomputed. Daily replies submitted under 700ms after round start are excluded from public statistics as a basic automated-sequence filter; their own locked score remains visible.
+
+The source document’s risk section suggests counting only the first three hours, while its detailed v1.1 score rules describe blending all daily first answers. This implementation follows v1.1’s explicit formula; it does not silently claim the three-hour cutoff. A stronger distributed-abuse policy and real-player calibration remain post-launch work.
+
+## Privacy and operational boundaries
+
+D1 stores a random device identifier, session state, submitted title (maximum 150 characters), selected film, score, and timestamps. It does not store raw IP addresses or user agents. Per-endpoint request throttling stores an SHA-256 hash of scope + network address in short-lived minute buckets. Expired buckets are removed opportunistically after two minutes; this is abuse prevention rather than analytics. The server rejects cross-origin mutation requests, validates request lengths and identifiers, uses parameterized SQL, and rate limits start/answer/next traffic. Browser storage can be cleared and device identifiers can be recreated; accountless once-per-device play is a friction measure, not a guarantee of one human/one daily session.
+
+## Local verification
+
+Run the project’s test/typecheck/build commands, apply the migration to local D1, and start `wrangler dev`. No production deployment should originate locally. Production releases must push a GitHub commit, pass that commit’s required CI checks, and deploy through the gated automated workflow.
+
+Verified locally on 2026-10-31 (Asia/Shanghai): all 21 project tests passed after the final 4,994-film / 69-prompt snapshot; `tsc --noEmit` passed. The backend’s ten domain/API tests include actual SQLite execution of the migration and SQL, concurrent next-round requests, answer idempotence, ownership, origin validation, malformed inputs, unknown retries, wrong-answer locking, resume forfeiture, practice-statistic isolation, past-date session closure, and ranking ties. The ranking regression builds twenty completed seven-round SQLite sessions and verifies both twenty zero-point ties (Top 100%) and a sole higher-scoring leader (Top 5%).
+
+`tests/game-live-smoke.ts` additionally passed against a real Wrangler/workerd process with an isolated local D1 database on port 8788. It completed seven rounds, waited for a real 20-second deadline, verified correct/wrong/skip/timeout results, duplicate idempotence, daily uniqueness, completed results, and 40-second practice. The script refuses non-local URLs. A later health request verified the final snapshot had 4,994 films and 69 prompts. These checks are local evidence; they do not establish production deployment, production D1 migration, DNS, or production traffic acceptance.

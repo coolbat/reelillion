@@ -1,0 +1,2 @@
+import type { APIRoute } from 'astro';
+export const GET: APIRoute = () => new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/how-to-play/','/archive/','/unlimited/','/packs/','/packs/oscars/','/packs/horror/','/packs/disney/','/packs/anime/','/packs/90s/','/daily-movie-games/','/movie-games-like-wordle/','/privacy/'].map(path=>`<url><loc>https://reelillion.com${path}</loc></url>`).join('')}</urlset>`, {headers:{'Content-Type':'application/xml'}});

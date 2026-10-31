@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-10-31T00:55:47.444856+00:00",
+  "license": "Wikidata structured facts and Wikimedia pageview metrics: CC0.",
+  "pageviewStart": "2025-10-01",
+  "pageviewEnd": "2026-09-30",
+  "pageviewMonths": 12,
+  "movies": 4994,
+  "prompts": 69,
+  "measuredMovies": 135,
+  "fallbackMovies": 4859,
+  "fallbackMedianMeasuredAnnualViews": 223300,
+  "pageviewFetchStatus": "Partial: provider returned HTTP 429; uncached requests stopped.",
+  "sources": [
+    "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/documentation/access-policy.html"
+  ],
+  "reviewStatus": "Automated factual checks and source-condition review; independent human editorial review and player calibration pending.",
+  "limitations": [
+    "A supported catalogue snapshot, not an exhaustive list of every film ever made.",
+    "All known catalogue movies are checked against genre/country/studio/award facts, beyond bounded discovery queries.",
+    "Most initial weights use Wikidata sitelink counts because Wikimedia pageviews imposed HTTP 429.",
+    "Estimated familiarity is not a player selection percentage or score percentile.",
+    "Runtime, release year and genre inherit Wikidata source ambiguity.",
+    "Full holiday editions and seven-round premium themed packs are not available."
+  ]
+}

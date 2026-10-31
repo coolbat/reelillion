@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Privacy · Reelillion" description="How Reelillion uses your device identifier, local streak, game sessions and answers to run the daily movie game.">
+  <article class="content-page"><p class="eyebrow">The small print, in plain English</p><h1 class="page-title">Your game.<br />Your privacy.</h1><p class="lede">You do not need to give us a name or email address to play.</p>
+    <div class="prose"><p>Last updated: October 31, 2026.</p><h2>What stays in your browser</h2><p>Reelillion uses browser storage for a randomly generated device identifier, your game state, preferences and Daily streak. This lets you return to a screening without creating an account. Clearing site data removes these local records and may reset your streak.</p>
+    <h2>What our game server stores</h2><p>To enforce one Daily attempt per device and calculate scores, our server stores that device identifier alongside game sessions, dates, question identifiers, timing, submitted answers and scores. These records are stored using Cloudflare D1. The identifier is not your name or email address, but it allows the game to recognize the same browser.</p>
+    <h2>Answer statistics</h2><p>First-attempt Daily answers contribute to aggregate counts for rarity scoring. Results may show how often a film was selected, but do not show other players' device identifiers. Archive and practice answers do not contribute to today's Daily counts.</p>
+    <h2>Keeping the game fair</h2><p>For short-term rate limiting, the server stores a hash derived from a request's IP address and endpoint scope. These temporary records are eligible for cleanup after their rate-limit window expires. Our application does not store raw IP addresses or user-agent strings in the game database.</p>
+    <h2>Hosting and network information</h2><p>Cloudflare hosts this site and processes network requests to deliver pages and protect its services. Its processing is described in <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's privacy policy</a>. Infrastructure-level logs may contain request information separately from our game records.</p>
+    <h2>Cookies, analytics and payments</h2><p>This release does not include advertising cookies, a third-party analytics SDK or a payment checkout. If these features are added, this notice will be updated to explain their data use and any available choices.</p>
+    <h2>Sharing and external links</h2><p>Sharing a result is your choice. The share card includes your score, tier emojis, game number and streak; it does not include your film answers or device identifier. Challenge links contain the information needed to compare game results. Other websites linked here have their own privacy practices.</p>
+    <h2>Your choices</h2><p>You can play without sharing a result and can clear this site's data in your browser settings. Clearing browser data does not automatically delete game records already stored on the server. Avoid entering personal information in the movie-title field.</p></div>
+    <a class="button button-secondary" href="/">Back to the screening <span aria-hidden="true">↗</span></a>
+  </article>
+</Layout>

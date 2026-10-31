@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+export function getStaticPaths() {
+  return [
+    {theme:'oscars',label:'Oscars',title:'An acceptance speech for your taste.',symbol:'✦',description:'A planned collection for the award-season completist. Best Picture winners, overlooked nominees and discoveries from the red carpet.'},
+    {theme:'horror',label:'Horror',title:'Your most obscure nightmare.',symbol:'☾',description:'A planned late-night screening of horror cinema. From household-name monsters to the films that found their audience years later.'},
+    {theme:'disney',label:'Disney',title:'A little beyond the obvious magic.',symbol:'✧',description:'A planned collection for family-film fans, with room for both treasured favorites and less familiar adventures.'},
+    {theme:'anime',label:'Anime',title:'A whole world between the frames.',symbol:'◎',description:'A planned collection of Japanese animated feature films. Recognize a favorite, then reach for the title only you would name.'},
+    {theme:'90s',label:'The 90s',title:'Your video-store era starts here.',symbol:'▤',description:'A planned rewind through 1990s feature films. Remember the big releases, then think back to your favorite rental-shelf discovery.'},
+  ].map((pack) => ({params:{theme:pack.theme},props:{pack}}));
+}
+const { pack } = Astro.props;
+---
+<Layout title={`${pack.label} movie trivia pack · Reelillion`} description={`${pack.description} This Reelillion theme pack is in development.`}>
+  <article class="content-page"><a class="back-link" href="/packs/">← All collections</a><p class="eyebrow">Coming attraction · {pack.label}</p><div class="pack-detail"><h1 class="page-title">{pack.title}</h1><span aria-hidden="true">{pack.symbol}</span></div><p class="lede">{pack.description}</p>
+    <section class="prose"><h2>The collection is still in the cutting room.</h2><p>We're building enough varied, verifiable questions for a full themed screening. This pack is not playable or on sale yet.</p><p>You can still sharpen your film knowledge in the main practice mode. It uses the general movie catalog, with no effect on your Daily score or streak.</p></section>
+    <a class="button" href="/?mode=practice">Play general practice <span aria-hidden="true">↗</span></a>
+    <p class="pack-affiliation">Reelillion is an independent film trivia game. Film titles, awards and studio names belong to their respective owners. This collection is not affiliated with a studio, award organization or film distributor.</p>
+  </article>
+</Layout>
+<style>.back-link{display:inline-block;color:#afd5c4;margin-bottom:2.5rem;text-decoration:none;font-size:.85rem}.pack-detail{display:flex;align-items:center;gap:2rem}.pack-detail h1{max-width:12ch}.pack-detail>span{font-size:clamp(5rem,20vw,12rem);line-height:1;color:#f27665}.pack-affiliation{margin-top:3rem;max-width:40rem;opacity:.65;line-height:1.7;font-size:.75rem}@media(max-width:540px){.pack-detail>span{display:none}}</style>

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+const tiers = [
+  ['🍿', 'Blockbuster', '10', '10% or more'],
+  ['🎟️', 'Matinee', '30', '3% to under 10%'],
+  ['🎞️', 'Indie', '60', '0.5% to under 3%'],
+  ['📼', 'Cult Classic', '85', '0.1% to under 0.5%'],
+  ['🏆', 'One in a Reelillion', '100', 'Under 0.1%'],
+];
+---
+<Layout title="How to play Reelillion · Rules & rarity scoring" description="Seven movie prompts, 20 seconds each. Learn how answers, spelling, rarity points, daily streaks and accessible mode work in Reelillion.">
+  <article class="content-page">
+    <p class="eyebrow">A quick director's briefing</p>
+    <h1 class="page-title">Good films.<br />Great deep cuts.</h1>
+    <p class="lede">Seven prompts. One film for each. The less obvious your answer, the more points you earn.</p>
+    <div class="info-grid rules-steps">
+      <section class="info-card"><span class="step-number">01</span><h2>Read the prompt</h2><p>Everyone gets the same seven daily questions. A new set arrives at midnight in New York.</p></section>
+      <section class="info-card"><span class="step-number">02</span><h2>Name your film</h2><p>You have 20 seconds. Type a title, then submit it. There is no bonus for answering faster.</p></section>
+      <section class="info-card"><span class="step-number">03</span><h2>Find your deep cut</h2><p>Valid answers earn 10–100 points. Finish all seven for a score out of 700, then share without spoilers.</p></section>
+    </div>
+    <section class="prose">
+      <h2 class="section-title">The five billing positions</h2>
+      <p>Points use an estimated selection share for that prompt. While the audience is small, Wikipedia pageviews and Wikidata language coverage provide a popularity estimate. Films without measured pageviews use language coverage as an explicit fallback. The game labels this estimate separately from actual player choices.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Rarity scoring table">
+        <table><thead><tr><th scope="col">Your billing</th><th scope="col">Points</th><th scope="col">Estimated share</th></tr></thead><tbody>{tiers.map(([emoji, name, points, share]) => <tr><th scope="row"><span aria-hidden="true">{emoji}</span> {name}</th><td>+{points}</td><td>{share}</td></tr>)}</tbody></table>
+      </div>
+      <p>Your points lock when you submit. Later answers cannot lower your score. A missed, skipped or incorrect answer earns zero.</p>
+      <h2 class="section-title">What counts as an answer?</h2>
+      <p>A feature film in our catalog that fits the question. Animation and feature documentaries count; television series and shorts do not. Titles have English Wikipedia entries, and sequels count as separate films. Classifications and cast credits follow Wikidata; its genre boundaries can be broad.</p>
+      <p>Capitalization, punctuation and leading “The” or “A” are ignored. Common aliases and small spelling mistakes are supported, with stricter matching for short titles and sequel numbers. If a title has remakes, the question's date or director restriction helps choose the right version. For an unrestricted title, the more widely known matching version determines rarity.</p>
+      <h3>A title we don't recognize</h3><p>You can try again while time remains. The catalog is still growing, so an unrecognized title is not a claim that the film does not exist.</p>
+      <h3>A real film that doesn't fit</h3><p>The round locks at zero and shows an example that does fit. Autocomplete appears after three characters and searches the whole catalog; a suggestion is not a hint that an answer qualifies.</p>
+      <h2 class="section-title">One daily screening</h2>
+      <p>You get one scored Daily attempt per device. Leaving or reloading during a question forfeits that question. Your other answers are saved, and you can continue the round. Finishing consecutive Daily games builds a streak on this browser.</p>
+      <h2 class="section-title">A little more time</h2>
+      <p>Enable accessible mode before starting to receive 40 seconds per question. Your share card includes ⏱ so friends know which mode you used. Keyboard navigation and reduced-motion preferences are supported.</p>
+      <h2 class="section-title">The encore</h2>
+      <p>Results show your answers, their rarity and other films you could have named. Actual player statistics appear only when there is data. Archive and practice sessions never change today's answer frequencies or your Daily streak.</p>
+      <p><a href="/archive/">Visit the archive</a> for recent games, or <a href="/unlimited/">try a practice screening</a>.</p>
+    </section>
+    <a class="button" href="/">Take your seat <span aria-hidden="true">↗</span></a>
+  </article>
+</Layout>
+<style>
+  .rules-steps{margin-block:3rem;grid-template-columns:repeat(3,1fr)}.step-number{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:var(--coral,#f27665);letter-spacing:.12em}.rules-steps h2{font-size:1.15rem;margin-block:.7rem}.table-scroll{overflow-x:auto;max-width:100%;margin-block:1.5rem}.table-scroll:focus-visible{outline:2px solid var(--mint,#afd5c4);outline-offset:5px}table{width:100%;border-collapse:collapse;text-align:left;font-size:.92rem}th,td{padding:1rem .75rem;border-bottom:1px solid #f5efdf26}thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#afd5c4}tbody th{font-weight:500;min-width:12rem}td:last-child{white-space:nowrap}@media(max-width:720px){.rules-steps{grid-template-columns:1fr}}
+</style>

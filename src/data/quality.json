@@ -1,0 +1,485 @@
+[
+  {
+    "id": "cast-tom-hanks",
+    "answers": 73,
+    "topThreePriorShare": 0.2403,
+    "rarestPriorShare": 0.0000238,
+    "measured": 2
+  },
+  {
+    "id": "cast-meryl-streep",
+    "answers": 70,
+    "topThreePriorShare": 0.1175,
+    "rarestPriorShare": 0.0001554,
+    "measured": 1
+  },
+  {
+    "id": "cast-samuel-l-jackson",
+    "answers": 135,
+    "topThreePriorShare": 0.1293,
+    "rarestPriorShare": 0.0000763,
+    "measured": 4
+  },
+  {
+    "id": "cast-morgan-freeman",
+    "answers": 100,
+    "topThreePriorShare": 0.2178,
+    "rarestPriorShare": 0.0000072,
+    "measured": 5
+  },
+  {
+    "id": "cast-robert-de-niro",
+    "answers": 120,
+    "topThreePriorShare": 0.124,
+    "rarestPriorShare": 0.0000063,
+    "measured": 3
+  },
+  {
+    "id": "cast-al-pacino",
+    "answers": 61,
+    "topThreePriorShare": 0.3246,
+    "rarestPriorShare": 0.0000947,
+    "measured": 2
+  },
+  {
+    "id": "cast-denzel-washington",
+    "answers": 54,
+    "topThreePriorShare": 0.1454,
+    "rarestPriorShare": 0.0001459,
+    "measured": 2
+  },
+  {
+    "id": "cast-cate-blanchett",
+    "answers": 65,
+    "topThreePriorShare": 0.2056,
+    "rarestPriorShare": 0.0000717,
+    "measured": 6
+  },
+  {
+    "id": "cast-tilda-swinton",
+    "answers": 72,
+    "topThreePriorShare": 0.2288,
+    "rarestPriorShare": 0.0000526,
+    "measured": 3
+  },
+  {
+    "id": "cast-nicole-kidman",
+    "answers": 73,
+    "topThreePriorShare": 0.1382,
+    "rarestPriorShare": 0.0001066,
+    "measured": 2
+  },
+  {
+    "id": "cast-julianne-moore",
+    "answers": 81,
+    "topThreePriorShare": 0.1454,
+    "rarestPriorShare": 0.0000128,
+    "measured": 4
+  },
+  {
+    "id": "cast-sigourney-weaver",
+    "answers": 70,
+    "topThreePriorShare": 0.2545,
+    "rarestPriorShare": 0.0000924,
+    "measured": 5
+  },
+  {
+    "id": "cast-susan-sarandon",
+    "answers": 106,
+    "topThreePriorShare": 0.1391,
+    "rarestPriorShare": 0.0000178,
+    "measured": 3
+  },
+  {
+    "id": "cast-jack-nicholson",
+    "answers": 66,
+    "topThreePriorShare": 0.2452,
+    "rarestPriorShare": 0.0001219,
+    "measured": 0
+  },
+  {
+    "id": "cast-bruce-willis",
+    "answers": 115,
+    "topThreePriorShare": 0.1247,
+    "rarestPriorShare": 0.0000078,
+    "measured": 9
+  },
+  {
+    "id": "cast-nicolas-cage",
+    "answers": 105,
+    "topThreePriorShare": 0.138,
+    "rarestPriorShare": 0.0001643,
+    "measured": 2
+  },
+  {
+    "id": "cast-keanu-reeves",
+    "answers": 74,
+    "topThreePriorShare": 0.2338,
+    "rarestPriorShare": 0.0000904,
+    "measured": 0
+  },
+  {
+    "id": "cast-matt-damon",
+    "answers": 79,
+    "topThreePriorShare": 0.1649,
+    "rarestPriorShare": 0.000007,
+    "measured": 1
+  },
+  {
+    "id": "cast-brad-pitt",
+    "answers": 67,
+    "topThreePriorShare": 0.1638,
+    "rarestPriorShare": 0.0001145,
+    "measured": 1
+  },
+  {
+    "id": "cast-anthony-hopkins",
+    "answers": 96,
+    "topThreePriorShare": 0.2043,
+    "rarestPriorShare": 0.0000094,
+    "measured": 0
+  },
+  {
+    "id": "cast-michael-caine",
+    "answers": 127,
+    "topThreePriorShare": 0.2477,
+    "rarestPriorShare": 0.0000732,
+    "measured": 5
+  },
+  {
+    "id": "cast-judi-dench",
+    "answers": 57,
+    "topThreePriorShare": 0.193,
+    "rarestPriorShare": 0.0002882,
+    "measured": 1
+  },
+  {
+    "id": "cast-maggie-smith",
+    "answers": 60,
+    "topThreePriorShare": 0.3178,
+    "rarestPriorShare": 0.0000669,
+    "measured": 9
+  },
+  {
+    "id": "cast-johnny-depp",
+    "answers": 79,
+    "topThreePriorShare": 0.1582,
+    "rarestPriorShare": 0.0000283,
+    "measured": 3
+  },
+  {
+    "id": "cast-michelle-yeoh",
+    "answers": 46,
+    "topThreePriorShare": 0.229,
+    "rarestPriorShare": 0.0000729,
+    "measured": 1
+  },
+  {
+    "id": "cast-jackie-chan",
+    "answers": 104,
+    "topThreePriorShare": 0.1692,
+    "rarestPriorShare": 0.0004544,
+    "measured": 0
+  },
+  {
+    "id": "cast-kate-winslet",
+    "answers": 44,
+    "topThreePriorShare": 0.3763,
+    "rarestPriorShare": 0.0008471,
+    "measured": 0
+  },
+  {
+    "id": "cast-willem-dafoe",
+    "answers": 125,
+    "topThreePriorShare": 0.1427,
+    "rarestPriorShare": 0.0000069,
+    "measured": 2
+  },
+  {
+    "id": "cast-emma-thompson",
+    "answers": 63,
+    "topThreePriorShare": 0.2209,
+    "rarestPriorShare": 0.0002031,
+    "measured": 4
+  },
+  {
+    "id": "cast-dustin-hoffman",
+    "answers": 67,
+    "topThreePriorShare": 0.1899,
+    "rarestPriorShare": 0.000045,
+    "measured": 0
+  },
+  {
+    "id": "cast-cary-grant",
+    "answers": 81,
+    "topThreePriorShare": 0.211,
+    "rarestPriorShare": 0.0006274,
+    "measured": 0
+  },
+  {
+    "id": "cast-clint-eastwood",
+    "answers": 74,
+    "topThreePriorShare": 0.2152,
+    "rarestPriorShare": 0.0000118,
+    "measured": 3
+  },
+  {
+    "id": "cast-harrison-ford",
+    "answers": 66,
+    "topThreePriorShare": 0.1973,
+    "rarestPriorShare": 0.0000338,
+    "measured": 1
+  },
+  {
+    "id": "cast-gene-hackman",
+    "answers": 77,
+    "topThreePriorShare": 0.1452,
+    "rarestPriorShare": 0.000354,
+    "measured": 2
+  },
+  {
+    "id": "cast-john-goodman",
+    "answers": 86,
+    "topThreePriorShare": 0.1936,
+    "rarestPriorShare": 0.0000394,
+    "measured": 1
+  },
+  {
+    "id": "cast-jeff-bridges",
+    "answers": 70,
+    "topThreePriorShare": 0.2404,
+    "rarestPriorShare": 0.0000685,
+    "measured": 0
+  },
+  {
+    "id": "genre-horror",
+    "answers": 420,
+    "topThreePriorShare": 0.0608,
+    "rarestPriorShare": 0.0000053,
+    "measured": 10
+  },
+  {
+    "id": "genre-science-fiction",
+    "answers": 555,
+    "topThreePriorShare": 0.0405,
+    "rarestPriorShare": 0.000003,
+    "measured": 26
+  },
+  {
+    "id": "genre-comedy",
+    "answers": 1245,
+    "topThreePriorShare": 0.0296,
+    "rarestPriorShare": 5e-7,
+    "measured": 36
+  },
+  {
+    "id": "genre-drama",
+    "answers": 1256,
+    "topThreePriorShare": 0.0297,
+    "rarestPriorShare": 0.0000021,
+    "measured": 24
+  },
+  {
+    "id": "genre-romantic-comedy",
+    "answers": 468,
+    "topThreePriorShare": 0.0561,
+    "rarestPriorShare": 0.0000248,
+    "measured": 11
+  },
+  {
+    "id": "genre-fantasy",
+    "answers": 685,
+    "topThreePriorShare": 0.0262,
+    "rarestPriorShare": 6e-7,
+    "measured": 23
+  },
+  {
+    "id": "genre-musical",
+    "answers": 378,
+    "topThreePriorShare": 0.051,
+    "rarestPriorShare": 0.0000011,
+    "measured": 10
+  },
+  {
+    "id": "genre-western",
+    "answers": 271,
+    "topThreePriorShare": 0.0724,
+    "rarestPriorShare": 0.0000558,
+    "measured": 6
+  },
+  {
+    "id": "genre-animated",
+    "answers": 502,
+    "topThreePriorShare": 0.0557,
+    "rarestPriorShare": 9e-7,
+    "measured": 18
+  },
+  {
+    "id": "country-japan",
+    "answers": 246,
+    "topThreePriorShare": 0.0732,
+    "rarestPriorShare": 0.0000644,
+    "measured": 5
+  },
+  {
+    "id": "country-france",
+    "answers": 523,
+    "topThreePriorShare": 0.0279,
+    "rarestPriorShare": 0.0000055,
+    "measured": 10
+  },
+  {
+    "id": "country-india",
+    "answers": 245,
+    "topThreePriorShare": 0.067,
+    "rarestPriorShare": 0.0001371,
+    "measured": 8
+  },
+  {
+    "id": "country-italy",
+    "answers": 290,
+    "topThreePriorShare": 0.0829,
+    "rarestPriorShare": 0.0000025,
+    "measured": 5
+  },
+  {
+    "id": "country-germany",
+    "answers": 372,
+    "topThreePriorShare": 0.0526,
+    "rarestPriorShare": 0.0000072,
+    "measured": 5
+  },
+  {
+    "id": "country-united-kingdom",
+    "answers": 818,
+    "topThreePriorShare": 0.037,
+    "rarestPriorShare": 0.0000031,
+    "measured": 30
+  },
+  {
+    "id": "award-academy-award-for-best-picture",
+    "answers": 98,
+    "topThreePriorShare": 0.1177,
+    "rarestPriorShare": 0.0042744,
+    "measured": 2
+  },
+  {
+    "id": "award-palme-d-or",
+    "answers": 84,
+    "topThreePriorShare": 0.1397,
+    "rarestPriorShare": 0.0017606,
+    "measured": 3
+  },
+  {
+    "id": "studio-pixar",
+    "answers": 36,
+    "topThreePriorShare": 0.1928,
+    "rarestPriorShare": 0.0000578,
+    "measured": 3
+  },
+  {
+    "id": "studio-walt-disney-pictures",
+    "answers": 341,
+    "topThreePriorShare": 0.0708,
+    "rarestPriorShare": 0.0000064,
+    "measured": 13
+  },
+  {
+    "id": "decade-1930",
+    "answers": 72,
+    "topThreePriorShare": 0.2769,
+    "rarestPriorShare": 0.0002425,
+    "measured": 0
+  },
+  {
+    "id": "decade-1940",
+    "answers": 90,
+    "topThreePriorShare": 0.1944,
+    "rarestPriorShare": 0.0001346,
+    "measured": 0
+  },
+  {
+    "id": "decade-1950",
+    "answers": 182,
+    "topThreePriorShare": 0.1082,
+    "rarestPriorShare": 0.0000334,
+    "measured": 2
+  },
+  {
+    "id": "decade-1960",
+    "answers": 285,
+    "topThreePriorShare": 0.0742,
+    "rarestPriorShare": 0.000025,
+    "measured": 6
+  },
+  {
+    "id": "decade-1970",
+    "answers": 358,
+    "topThreePriorShare": 0.0822,
+    "rarestPriorShare": 0.0000023,
+    "measured": 5
+  },
+  {
+    "id": "decade-1980",
+    "answers": 458,
+    "topThreePriorShare": 0.0728,
+    "rarestPriorShare": 0.0000017,
+    "measured": 14
+  },
+  {
+    "id": "decade-1990",
+    "answers": 793,
+    "topThreePriorShare": 0.0478,
+    "rarestPriorShare": 9e-7,
+    "measured": 20
+  },
+  {
+    "id": "decade-2000",
+    "answers": 1174,
+    "topThreePriorShare": 0.0291,
+    "rarestPriorShare": 0.0000021,
+    "measured": 26
+  },
+  {
+    "id": "decade-2010",
+    "answers": 1124,
+    "topThreePriorShare": 0.0205,
+    "rarestPriorShare": 6e-7,
+    "measured": 16
+  },
+  {
+    "id": "decade-2020",
+    "answers": 440,
+    "topThreePriorShare": 0.0881,
+    "rarestPriorShare": 0.000002,
+    "measured": 46
+  },
+  {
+    "id": "runtime-under-90",
+    "answers": 720,
+    "topThreePriorShare": 0.0763,
+    "rarestPriorShare": 0.0000012,
+    "measured": 15
+  },
+  {
+    "id": "runtime-over-120",
+    "answers": 1410,
+    "topThreePriorShare": 0.0216,
+    "rarestPriorShare": 0.0000014,
+    "measured": 53
+  },
+  {
+    "id": "runtime-over-150",
+    "answers": 354,
+    "topThreePriorShare": 0.0647,
+    "rarestPriorShare": 0.0000113,
+    "measured": 11
+  },
+  {
+    "id": "studio-dreamworks-animation",
+    "answers": 37,
+    "topThreePriorShare": 0.3302,
+    "rarestPriorShare": 0.0035891,
+    "measured": 1
+  }
+]

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Reelillion Unlimited · More movie trivia practice" description="Keep the film trivia going with a free practice screening. Reelillion Unlimited and paid theme packs are in development.">
+  <article class="content-page">
+    <p class="eyebrow">Stay for the encore</p><h1 class="page-title">The credits<br />can wait.</h1>
+    <p class="lede">Your Daily is just the opening act. Find a few more deep cuts in a free practice screening.</p>
+    <section class="practice-ticket"><div><span class="eyebrow">Practice screening</span><h2>No streak. No stakes.<br />Just cinema.</h2><p>Seven prompts from the catalog. The same rarity rules, with scores based on popularity estimates. Play again whenever you like.</p><a href="/?mode=practice" class="button">Start practice <span aria-hidden="true">↗</span></a></div><div class="ticket-symbol" aria-hidden="true">∞</div></section>
+    <div class="prose"><h2>Unlimited is in the works.</h2><p>A dedicated Unlimited mode, more questions and themed collections are planned. For now, practice is free, and no payment or subscription is required.</p><p>Practice answers do not enter today's rarity statistics. They also do not count toward your Daily streak. A larger catalog is on the way, so you may meet some familiar prompts.</p><p>Looking for a specific genre? <a href="/packs/">See the planned theme packs</a>, or <a href="/">return to today's Daily</a>.</p></div>
+  </article>
+</Layout>
+<style>
+  .practice-ticket{position:relative;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:clamp(1.5rem,4vw,3rem);margin-block:3rem;background:#f5efdf;color:#101c36;border-radius:4px}.practice-ticket .eyebrow{color:#634841}.practice-ticket h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-block:1rem}.practice-ticket p{max-width:35rem;line-height:1.75;margin-bottom:1.5rem}.ticket-symbol{font-family:'Space Grotesk',sans-serif;font-size:clamp(5rem,14vw,10rem);color:#355e58;line-height:1}.practice-ticket .button{background:#101c36;color:#f5efdf}@media(max-width:540px){.practice-ticket{grid-template-columns:1fr}.ticket-symbol{position:absolute;right:1.25rem;top:.75rem;font-size:3rem;opacity:.4}}
+</style>

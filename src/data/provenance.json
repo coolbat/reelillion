@@ -1,0 +1,345 @@
+[
+  {
+    "id": "cast-tom-hanks",
+    "answerCount": 67,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Tom_Hanks> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 73
+  },
+  {
+    "id": "cast-meryl-streep",
+    "answerCount": 68,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Meryl_Streep> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 70
+  },
+  {
+    "id": "cast-samuel-l-jackson",
+    "answerCount": 131,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Samuel_L._Jackson> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 135
+  },
+  {
+    "id": "cast-morgan-freeman",
+    "answerCount": 98,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Morgan_Freeman> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 100
+  },
+  {
+    "id": "cast-robert-de-niro",
+    "answerCount": 120,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Robert_De_Niro> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 120
+  },
+  {
+    "id": "cast-al-pacino",
+    "answerCount": 61,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Al_Pacino> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 61
+  },
+  {
+    "id": "cast-denzel-washington",
+    "answerCount": 54,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Denzel_Washington> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 54
+  },
+  {
+    "id": "cast-cate-blanchett",
+    "answerCount": 62,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Cate_Blanchett> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 65
+  },
+  {
+    "id": "cast-tilda-swinton",
+    "answerCount": 70,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Tilda_Swinton> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 72
+  },
+  {
+    "id": "cast-nicole-kidman",
+    "answerCount": 72,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Nicole_Kidman> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 73
+  },
+  {
+    "id": "cast-julianne-moore",
+    "answerCount": 81,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Julianne_Moore> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 81
+  },
+  {
+    "id": "cast-sigourney-weaver",
+    "answerCount": 68,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Sigourney_Weaver> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 70
+  },
+  {
+    "id": "cast-susan-sarandon",
+    "answerCount": 105,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Susan_Sarandon> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 106
+  },
+  {
+    "id": "cast-jack-nicholson",
+    "answerCount": 66,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Jack_Nicholson> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 66
+  },
+  {
+    "id": "cast-bruce-willis",
+    "answerCount": 113,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Bruce_Willis> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 115
+  },
+  {
+    "id": "cast-nicolas-cage",
+    "answerCount": 100,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Nicolas_Cage> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 105
+  },
+  {
+    "id": "cast-keanu-reeves",
+    "answerCount": 71,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Keanu_Reeves> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 74
+  },
+  {
+    "id": "cast-matt-damon",
+    "answerCount": 77,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Matt_Damon> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 79
+  },
+  {
+    "id": "cast-brad-pitt",
+    "answerCount": 65,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Brad_Pitt> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 67
+  },
+  {
+    "id": "cast-anthony-hopkins",
+    "answerCount": 96,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Anthony_Hopkins> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 96
+  },
+  {
+    "id": "cast-michael-caine",
+    "answerCount": 125,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Michael_Caine> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 127
+  },
+  {
+    "id": "cast-judi-dench",
+    "answerCount": 56,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Judi_Dench> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 57
+  },
+  {
+    "id": "cast-maggie-smith",
+    "answerCount": 58,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Maggie_Smith> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 60
+  },
+  {
+    "id": "cast-johnny-depp",
+    "answerCount": 76,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Johnny_Depp> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 79
+  },
+  {
+    "id": "cast-michelle-yeoh",
+    "answerCount": 44,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Michelle_Yeoh> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 46
+  },
+  {
+    "id": "cast-jackie-chan",
+    "answerCount": 100,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Jackie_Chan> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 104
+  },
+  {
+    "id": "cast-kate-winslet",
+    "answerCount": 42,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Kate_Winslet> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 44
+  },
+  {
+    "id": "cast-willem-dafoe",
+    "answerCount": 121,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Willem_Dafoe> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 125
+  },
+  {
+    "id": "cast-emma-thompson",
+    "answerCount": 61,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Emma_Thompson> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 63
+  },
+  {
+    "id": "cast-dustin-hoffman",
+    "answerCount": 63,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Dustin_Hoffman> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 67
+  },
+  {
+    "id": "cast-cary-grant",
+    "answerCount": 81,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Cary_Grant> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 81
+  },
+  {
+    "id": "cast-clint-eastwood",
+    "answerCount": 74,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Clint_Eastwood> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 74
+  },
+  {
+    "id": "cast-harrison-ford",
+    "answerCount": 66,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Harrison_Ford> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 66
+  },
+  {
+    "id": "cast-gene-hackman",
+    "answerCount": 76,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Gene_Hackman> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 77
+  },
+  {
+    "id": "cast-john-goodman",
+    "answerCount": 78,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/John_Goodman> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 86
+  },
+  {
+    "id": "cast-jeff-bridges",
+    "answerCount": 67,
+    "query": "SELECT ?film ?filmLabel ?article (MIN(?date) AS ?released)\n        (MAX(?duration) AS ?runtime) (MAX(?links) AS ?sitelinks) WHERE {\n        ?film wdt:P31/wdt:P279* wd:Q11424; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        FILTER(?duration >= 40)\n        <https://en.wikipedia.org/wiki/Jeff_Bridges> schema:about ?person. ?film wdt:P161 ?person.\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode\", \"i\"))\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q5398426. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1259759. }\n        FILTER NOT EXISTS { ?film wdt:P31/wdt:P279* wd:Q1983062. }\n        SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n    } GROUP BY ?film ?filmLabel ?article ORDER BY DESC(?sitelinks) LIMIT 500",
+    "catalogueAnswerCount": 70
+  },
+  {
+    "id": "genre-horror",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q200092.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 420
+  },
+  {
+    "id": "genre-science-fiction",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q471839.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 555
+  },
+  {
+    "id": "genre-comedy",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q157443.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 1245
+  },
+  {
+    "id": "genre-drama",
+    "answerCount": 230,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q130232.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 1256
+  },
+  {
+    "id": "genre-romantic-comedy",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q860626.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 468
+  },
+  {
+    "id": "genre-fantasy",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q157394.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 685
+  },
+  {
+    "id": "genre-musical",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q842256.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 378
+  },
+  {
+    "id": "genre-western",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q172980.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 271
+  },
+  {
+    "id": "genre-animated",
+    "answerCount": 202,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P136 wd:Q202866.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 502
+  },
+  {
+    "id": "country-japan",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q17.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 246
+  },
+  {
+    "id": "country-france",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q142.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 523
+  },
+  {
+    "id": "country-india",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q668.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 245
+  },
+  {
+    "id": "country-italy",
+    "answerCount": 236,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q38.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 290
+  },
+  {
+    "id": "country-germany",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q183.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 372
+  },
+  {
+    "id": "country-united-kingdom",
+    "answerCount": 240,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P495 wd:Q145.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 1200",
+    "catalogueAnswerCount": 818
+  },
+  {
+    "id": "award-academy-award-for-best-picture",
+    "answerCount": 98,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P166 wd:Q102427.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 2000",
+    "catalogueAnswerCount": 98
+  },
+  {
+    "id": "award-palme-d-or",
+    "answerCount": 84,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P166 wd:Q179808.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 2000",
+    "catalogueAnswerCount": 84
+  },
+  {
+    "id": "studio-pixar",
+    "answerCount": 36,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P272 wd:Q127552.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 2000",
+    "catalogueAnswerCount": 36
+  },
+  {
+    "id": "studio-walt-disney-pictures",
+    "answerCount": 341,
+    "query": "SELECT DISTINCT ?film ?article ?date ?duration ?links WHERE {\n        ?film wdt:P272 wd:Q191224.\n        ?film wdt:P31 ?kind; wdt:P577 ?date;\n            wdt:P2047 ?duration; wikibase:sitelinks ?links.\n        VALUES ?kind { wd:Q11424 wd:Q24869 wd:Q202866 wd:Q506240 wd:Q93204 }\n        FILTER(?duration >= 40)\n        ?article schema:about ?film; schema:isPartOf <https://en.wikipedia.org/>.\n        FILTER(!REGEX(STR(?article), \"miniseries|television_series|TV_series|episode|Holiday_Special\", \"i\"))\n    } ORDER BY DESC(?links) LIMIT 2000",
+    "catalogueAnswerCount": 341
+  },
+  {
+    "id": "studio-dreamworks-animation",
+    "answerCount": 37,
+    "query": "?film wdt:P272 wd:Q500088.",
+    "catalogueAnswerCount": 37,
+    "method": "Full-catalogue P272 facts; seed source ID corrected before release."
+  },
+  {
+    "id": "studio-studio-ghibli",
+    "answerCount": 5,
+    "query": "?film wdt:P272 wd:Q182950.",
+    "method": "Full-catalogue P272 facts; seed source ID corrected before release."
+  }
+]

@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description?: string; }
+const { title = 'Reelillion — The daily movie game for uncommon minds', description = 'Seven movie prompts. Twenty seconds each. Name the film nobody else thinks of in Reelillion, the free daily movie trivia game where rare answers win.' } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101c36" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://reelillion.com/images/social.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-wrap">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Reelillion home">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="currentColor"/><g fill="#101c36"><circle cx="17" cy="10" r="5"/><circle cx="30" cy="17" r="5"/><circle cx="10" cy="23" r="5"/><circle cx="24" cy="30" r="5"/><circle cx="20" cy="20" r="2.3"/></g></svg>
+          <span>reelillion<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="/" aria-current={path === '/' ? 'page' : undefined}>Daily game</a>
+          <a href="/archive/" aria-current={path === '/archive/' ? 'page' : undefined}>Archive</a>
+          <a href="/packs/" aria-current={path.startsWith('/packs/') ? 'page' : undefined}>Film clubs <span class="tiny-star">✧</span></a>
+        </nav>
+        <a class="header-help" href="/how-to-play/"><span class="help-mark">?</span><span>How to play</span></a>
+        <details class="mobile-menu"><summary aria-label="Open navigation"><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="/">Daily game</a><a href="/archive/">Archive</a><a href="/packs/">Film clubs</a><a href="/unlimited/">Unlimited</a><a href="/how-to-play/">How to play</a></nav></details>
+      </header>
+      <main id="main"><slot /></main>
+      <footer class="site-footer">
+        <div class="footer-top"><a class="footer-wordmark" href="/">A little less obvious.<br/><span>A little more you.</span></a><div class="footer-links"><a href="/daily-movie-games/">Daily movie games</a><a href="/movie-games-like-wordle/">Games like Wordle</a><a href="/how-to-play/">The rules</a><a href="/privacy/">Privacy</a></div></div>
+        <div class="footer-bottom"><span>© {new Date().getFullYear()} Reelillion · One in a Reelillion.</span><span>From the team behind <a href="https://rarestanswers.com/" target="_blank" rel="noopener">Rarest Answers ↗</a></span></div>
+      </footer>
+    </div>
+  </body>
+</html>

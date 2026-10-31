@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Archive from '../components/Archive';
+---
+<Layout title="Reelillion archive · Recent daily movie games" description="Catch a screening you missed. Replay the last seven days of Reelillion's daily movie trivia game for free, without changing your Daily streak.">
+  <article class="content-page">
+    <p class="eyebrow">Worth a second screening</p><h1 class="page-title">The archive.</h1>
+    <p class="lede">Missed a day? The last seven screenings are on the house.</p>
+    <Archive client:load />
+    <noscript><p>Enable JavaScript to see the current archive schedule and play saved screenings.</p></noscript>
+    <div class="prose archive-note"><h2>Same questions. A fresh attempt.</h2><p>Archive games use the original date's questions. They do not add to your Daily streak or affect today's answer statistics. Scores use the stored answer counts for that date when available.</p><p>Older archives and an All Access option are planned. There is no subscription or checkout at this time.</p></div>
+  </article>
+</Layout>
+<style is:global>
+  .archive-list{margin-block:3rem;border-top:1px solid #f5efdf26}.archive-entry{display:grid;grid-template-columns:6rem 1fr auto;gap:1rem;align-items:center;padding:1.5rem .5rem;border-bottom:1px solid #f5efdf26;text-decoration:none;color:inherit;transition:background .18s ease,transform .18s ease}.archive-entry:hover{background:#f5efdf07}.archive-number{font-size:.72rem;letter-spacing:.08em;color:#afd5c4}.archive-date{font-family:'Space Grotesk',sans-serif;font-size:1.1rem}.archive-action{font-size:.85rem;color:#f27665}.archive-entry:focus-visible{outline:2px solid #afd5c4;outline-offset:5px}.archive-empty{padding:3rem 0;margin-block:2rem;border-block:1px solid #f5efdf26;max-width:38rem}.archive-empty-icon{font-size:3rem;color:#afd5c4}.archive-empty h2{font-size:1.5rem;margin-block:1rem}.archive-empty p{line-height:1.75;margin-bottom:1.5rem}.archive-note{margin-top:3rem}@media(max-width:480px){.archive-entry{grid-template-columns:1fr auto;gap:.5rem}.archive-number{grid-column:1/-1}.archive-date{font-size:1rem}}
+</style>

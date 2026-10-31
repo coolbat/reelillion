@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+artifacts/
+.DS_Store
+*.log
+/.data-cache/
+
+/电影主题稀有答案游戏（原名 Filmillion）：可行性与开发方案 4933330662634e97b4c845998a6baac7.md
