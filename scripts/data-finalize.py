@@ -19,6 +19,14 @@ spec.loader.exec_module(refresh)
 movies=json.loads((OUT/'movies.json').read_text())
 prompts=json.loads((OUT/'prompts.json').read_text())
 facts=json.loads((OUT/'facts.json').read_text())
+movie_ids={movie['id'] for movie in movies}
+if set(facts)!=movie_ids:
+    missing=sorted(movie_ids-set(facts))
+    extra=sorted(set(facts)-movie_ids)
+    raise SystemExit('facts.json does not cover this exact movie snapshot; '
+        f'missing={missing[:10]}, extra={extra[:10]}. Run data-refresh.py to fetch '
+        'facts for every current movie; do not reuse an older facts file.')
+previous_metadata=json.loads((OUT/'metadata.json').read_text()) if (OUT/'metadata.json').exists() else {}
 observations={}
 for movie in movies:
     movie.update(facts.get(movie['id'],{}))
@@ -96,7 +104,8 @@ metadata={
     'pageviewStart':'2025-10-01','pageviewEnd':'2026-09-30','pageviewMonths':12,
     'movies':len(movies),'prompts':len(prompts),'measuredMovies':len(measured),
     'fallbackMovies':len(movies)-len(measured),'fallbackMedianMeasuredAnnualViews':median,
-    'pageviewFetchStatus':'Partial: provider returned HTTP 429; uncached requests stopped.',
+    'pageviewFetchStatus':previous_metadata.get('pageviewFetchStatus',
+        'Offline finalization from cached observations; live provider status unverified.'),
     'sources':['https://www.wikidata.org/wiki/Wikidata:Licensing',
         'https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/documentation/access-policy.html'],
     'reviewStatus':'Automated factual checks and source-condition review; independent human editorial review and player calibration pending.',

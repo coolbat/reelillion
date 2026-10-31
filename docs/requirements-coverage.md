@@ -23,7 +23,7 @@
 | 每设备每天一次计分，关闭页面当前题零分 | implemented | D1 唯一约束、再次开始时放弃当前未锁定题。清除存储可产生新设备标识，并非严格的一人一次认证。 |
 | 跨午夜的旧 Daily 不继续影响旧日稀有度 | implemented | 下次 API 访问时补齐未答题零分并结束旧局，补齐记录不进入稀有度样本。 |
 | 连续天数保存在本地 | implemented | 浏览器完成记录与 streak；换浏览器或清除数据会中断本地连续性。多标签页与跨日结果回看需纳入验收。 |
-| 真实浏览器 390/768/1440px、关键交互、最多三轮复查 | pending | 验收以主代理保存的实际截图、问题和复查记录为准；本表不代替浏览器观察。 |
+| 真实浏览器 390/768/1440px、关键交互、最多三轮复查 | implemented | 已执行三轮，修复并复查开关、计时 SVG、平板溢出和结算定位；见 browser-review.md。真机与辅助阅读器仍未验证。 |
 
 ## 稀有度、结果与分享
 
@@ -84,12 +84,12 @@
 
 | 需求 | 状态 | 当前覆盖与边界 |
 | --- | --- | --- |
-| 创建 GitHub 仓库并提交推送 | pending | 以实际仓库、commit 与推送结果为准；源码目录存在不是远端交付证明。 |
+| 创建 GitHub 仓库并提交推送 | implemented | coolbat/reelillion 已创建并推送；首个应用版本为 61b6c3d，后续变更继续走相同门禁。 |
 | 同一提交的 GitHub `Quality` 检查通过 | implemented | 工作流定义 Node 24 安装、类型检查、测试、数据检查、构建和 Wrangler dry-run；实际同 SHA CI 状态需独立记录。 |
 | 检查通过后 Cloudflare 自动部署 | implemented | `ci:gate` 验证同 SHA 的最新 GitHub Actions `Quality` 成功，`deploy:ci` 才执行远程迁移和自动发布。平台 Git 连接及成功部署仍需验收。 |
 | D1 绑定与迁移 | implemented | Wrangler 配置含 DB 绑定与迁移文件；生产表建立及 API 持久性需通过自动部署和线上请求确认。 |
-| Cloudflare/Spaceship DNS 与 TLS | pending | 主代理配置并保留原有业务记录；以 nameserver、zone、域名绑定、证书和 HTTPS 实际结果为准。 |
-| commit、必需检查、Cloudflare 记录、线上版本一致 | pending | 需要最终 release evidence；仅 push 或 CI success 不等于已上线。 |
+| Cloudflare/Spaceship DNS 与 TLS | implemented | 已切换 Cloudflare NS，主域名与 www 通过 Worker custom domain 绑定，HTTPS 200 已验证。旧停放记录保留于备份名称。 |
+| commit、必需检查、Cloudflare 记录、线上版本一致 | implemented | 61b6c3d 的 Quality 通过、Cloudflare Git build 门禁与版本 4104fda9 对应；生产 assets 字节相符，D1 Practice 七题通过。见 release-evidence.md。 |
 | 联系 10–20 位短视频博主、录屏与专属包 | planned | 本次没有联系外部人员、发送邮件或制作已交付的博主主题包。 |
 | Reddit 发帖、Product Hunt、聚合站收录 | planned | 未发布帖子或提交目录；需要独立授权和各平台规则检查。 |
 | 自有渠道分发与答案站 SEO 联动 | pending | Reelillion 出站链接已完成；Rarest Answers 的入站推广与内容发布尚待执行。 |

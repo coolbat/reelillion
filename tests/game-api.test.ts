@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import worker, { type Env } from '../worker/index';
 import { movies, getDailyPrompts } from '../src/data/catalog';
-import { shiftDate } from '../src/lib/game';
+import { shiftDate, resolveMovie, priorShare, estimatedShare, tierForShare } from '../src/lib/game';
 
 function harness() {
   const sqlite = new DatabaseSync(':memory:');
@@ -196,4 +196,60 @@ test('daily ranking counts strictly lower scores, so ties never imply a false to
     assert.equal(100 - winner.percentile, 5, 'the sole leader among twenty completed games is Top 5%');
     assert.equal(winner.session.answers.reduce((sum: number, answer: any) => sum + answer.points, 0), winner.total);
   } finally { sqlite.close(); }
+});
+
+test('archive replays deterministic historical prompts and counts without changing daily scores or statistics', async t => {
+  const { sqlite, request } = harness();
+  t.mock.timers.enable({ apis: ['Date'], now: Date.parse('2026-10-30T12:00:00Z') });
+  try {
+    const deviceId = crypto.randomUUID();
+    let daily = (await request('/api/start', { deviceId, mode: 'daily' })).body;
+    assert.equal(daily.date, '2026-10-30');
+    const dailyId = daily.sessionId;
+    const expectedPrompts = getDailyPrompts('2026-10-30');
+    const firstPrompt = expectedPrompts[0];
+    const selected = movies.find(movie => firstPrompt.movieIds.includes(movie.id))!;
+    const movie = resolveMovie([selected], firstPrompt, movies)!;
+    const prior = priorShare(movie, firstPrompt, movies);
+    let dailyLocked: any;
+    for (let index = 0; index < 7; index++) {
+      t.mock.timers.tick(1000);
+      const answer = await request('/api/answer', { sessionId: dailyId, deviceId, index, answer: index === 0 ? movie.id : '' });
+      assert.equal(answer.status, 200);
+      if (index === 0) dailyLocked = answer.body.answer;
+      daily = answer.body.session;
+      if (!daily.completed) daily = (await request('/api/next', { sessionId: dailyId, deviceId })).body;
+    }
+    assert.equal(dailyLocked.estimatedShare, prior);
+    const originalRows = sqlite.prepare('SELECT round_index, points, eligible, result_json FROM answers WHERE session_id = ? ORDER BY round_index').all(dailyId);
+    const originalEligible = sqlite.prepare('SELECT COUNT(*) AS n FROM answers WHERE eligible = 1').get()?.n;
+    assert.equal(originalEligible, 7);
+
+    t.mock.timers.setTime(Date.parse('2026-10-31T12:00:00Z'));
+    const archiveListing = await request('/api/archive');
+    assert.deepEqual(archiveListing.body.games[0].prompts.map((prompt: any) => prompt.id), expectedPrompts.map(prompt => prompt.id));
+    let archive = (await request('/api/start', { deviceId, mode: 'archive', date: '2026-10-30' })).body;
+    assert.equal(archive.mode, 'archive');
+    assert.equal(archive.date, '2026-10-30');
+    assert.deepEqual(archive.prompts.map((prompt: any) => prompt.id), expectedPrompts.map(prompt => prompt.id));
+    for (let index = 0; index < 7; index++) {
+      t.mock.timers.tick(1000);
+      const answer = await request('/api/answer', { sessionId: archive.sessionId, deviceId, index, answer: index === 0 ? movie.id : '' });
+      assert.equal(answer.status, 200);
+      if (index === 0) {
+        const historicalShare = estimatedShare(prior, 1, 1);
+        assert.equal(answer.body.answer.estimatedShare, historicalShare);
+        assert.notEqual(historicalShare, prior, 'archive scoring uses the historical daily choice, not only the prior');
+        assert.equal(answer.body.answer.points, tierForShare(historicalShare).points);
+      }
+      archive = answer.body.session;
+      if (!archive.completed) archive = (await request('/api/next', { sessionId: archive.sessionId, deviceId })).body;
+    }
+    assert.equal(sqlite.prepare('SELECT SUM(eligible) AS n FROM answers WHERE session_id = ?').get(archive.sessionId)?.n, 0);
+    assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM answers WHERE eligible = 1').get()?.n, originalEligible);
+    assert.deepEqual(sqlite.prepare('SELECT round_index, points, eligible, result_json FROM answers WHERE session_id = ? ORDER BY round_index').all(dailyId), originalRows);
+    assert.equal((await request('/api/start', { deviceId, mode: 'archive', date: '2026-11-01' })).status, 400);
+    t.mock.timers.setTime(Date.parse('2026-11-08T12:00:00Z'));
+    assert.equal((await request('/api/start', { deviceId, mode: 'archive', date: '2026-10-31' })).status, 400);
+  } finally { t.mock.timers.reset(); sqlite.close(); }
 });

@@ -10,6 +10,8 @@ import hashlib
 import json
 import pathlib
 import re
+import subprocess
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -347,7 +349,12 @@ def main():
         if movie.get('annualPageviews') is not None and cache_path.exists():
             observations[movie['id']]=json.loads(cache_path.read_text())['items']
     (OUT/'pageviews.json').write_text(json.dumps(observations,ensure_ascii=False,separators=(',',':'))+'\n')
-    print(json.dumps(metadata,indent=2),flush=True)
+    # Complete the same source-condition and finalisation passes used for the
+    # reviewed launch snapshot. A child failure aborts instead of implying that
+    # the partially written working-tree snapshot is ready for release.
+    subprocess.run([sys.executable,str(ROOT/'scripts/data-voice-credits.py')],check=True)
+    subprocess.run([sys.executable,str(ROOT/'scripts/data-finalize.py')],check=True)
+    print(json.dumps(json.loads((OUT/'metadata.json').read_text()),indent=2),flush=True)
 
 
 if __name__=='__main__':

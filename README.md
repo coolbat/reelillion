@@ -6,7 +6,7 @@ The product uses English copy and a shared New York daily schedule. Full rules a
 
 ## Run locally
 
-Use **Node.js 24** (see `.nvmrc`) and Python 3 only when refreshing source data.
+Use **Node.js 24** (see `.nvmrc`). Python 3 is required for source-data refreshes and the data-tool checks.
 
 ```sh
 nvm use
@@ -26,6 +26,7 @@ Open `http://127.0.0.1:8787/`. This uses Wrangler's local D1 state under ignored
 npm run check
 npm test
 npm run data:check
+python3 tests/data_tools_test.py
 npm run build
 npx wrangler deploy --dry-run
 ```
@@ -94,17 +95,11 @@ The `DB` binding and database identifier are in `wrangler.jsonc`; schema migrati
 
 ## Domain setup and release evidence
 
-The intended production domain is `reelillion.com`, registered with Spaceship. Platform configuration and final DNS/TLS acceptance are being completed separately by the release owner; configuration in a source file alone does not prove that a domain is live.
+The production site is [reelillion.com](https://reelillion.com/); [www.reelillion.com](https://www.reelillion.com/) is also bound to this Worker. Both returned HTTPS 200 on October 31, 2026. Spaceship delegates DNS to `gerardo.ns.cloudflare.com` and `ullis.ns.cloudflare.com`. The two discovered registrar-parking A records were retained under `_parking-backup-1` and `_parking-backup-2` for reversible restoration; the apex and `www` use Cloudflare Worker custom domains.
 
-The release owner must record:
+The first application release is commit [`61b6c3d`](https://github.com/coolbat/reelillion/commit/61b6c3d5ad00a6ac5557670105c0dbdf6c9ca805), after its [GitHub Quality check](https://github.com/coolbat/reelillion/actions/runs/41153602890) passed. [Cloudflare Git build d8315962](https://dash.cloudflare.com/a8076357128d3e8be7dca72dbda3e8bf/workers/services/view/reelillion/production/builds/d8315962-6ead-4b2c-9b0d-365c0c27fd7e) independently verified the same SHA, applied the tracked D1 migration and deployed version `4104fda9-2114-4382-87e3-66da2a6d7b2c`.
 
-1. The Cloudflare zone and assigned nameservers, with an inventory of existing business DNS records preserved.
-2. The matching `reelillion.com` nameserver settings at Spaceship.
-3. The checked GitHub commit connected to the Cloudflare production branch and build/deploy commands.
-4. The Worker custom-domain binding, active certificate, HTTPS page response and API/D1 acceptance.
-5. Exact commit, required check and Cloudflare deployment links, plus any propagation or verification still pending.
-
-Do not apply settings to other registered domains or buy additional domains as part of this configuration. This section should be updated with actual platform evidence when complete.
+Production acceptance completed a seven-answer, 40-second Practice session, unknown-title retry and repeated persisted-result read. Daily rarity data was not populated by those acceptance answers. Production CSS, game JavaScript and the Astro client bytes matched the local build. See [`docs/release-evidence.md`](docs/release-evidence.md) for the release and its remaining validation limits. Subsequent documentation, test and data-tool changes continue through the same exact-commit gate.
 
 ## Current product boundaries
 

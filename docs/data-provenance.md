@@ -45,6 +45,20 @@ Source classification can be surprising: Wikidata includes horror classification
 
 ## Refresh
 
-Run `python3 scripts/data-refresh.py`, followed by `node scripts/data-validate.mjs` and the project test/check/build commands. The fetcher identifies itself with a User-Agent, caches requests in ignored `/.data-cache/`, and resumes cached responses. Pageview fetches are sequential and stop further uncached requests on HTTP 429. Remove the relevant cache entries to fetch revised source data. Review `metadata.json`, rejected sources and `quality.json` before committing a new snapshot. Network access is required only for refresh, not for ordinary builds or gameplay. `python3 scripts/data-finalize.py` can finish an interrupted snapshot entirely offline from retained facts and successful cache entries.
+Run the complete refresh and validation sequence on a development branch:
+
+```sh
+python3 scripts/data-refresh.py
+node scripts/data-validate.mjs
+npm test
+npm run check
+npm run build
+```
+
+The single `data-refresh.py` entry point discovers seed movies using both `P161` onscreen and `P725` voice credits; calls `enrich_catalogue` to fetch facts for **every movie ID in that new catalogue**, including IDs added during this refresh; writes a replacement `facts.json`; and reconstructs broad-condition memberships from the full catalogue. The bounded top-240 discovery rows are not the final legal-answer set. It then fetches popularity observations, automatically runs `data-voice-credits.py` to refresh the independent voice-credit audit and merge all known matching movies, and runs `data-finalize.py` for aliases, restricted drama membership, recovered studio prompts, final metadata and provenance. A failure in either child step fails the entry point. Do not validate or publish a partially written snapshot from a failed run.
+
+`data-finalize.py` is an **offline recovery/normalisation tool, not a facts refresher**. It rejects a `facts.json` whose movie-ID set differs from `movies.json`, so an older facts file cannot silently cover newly introduced entities. To recover after a facts-fetch failure, rerun `data-refresh.py`; the finalizer cannot invent the missing facts. To recover only after the full facts pass has completed, run `python3 scripts/data-voice-credits.py` followed by `python3 scripts/data-finalize.py`, then repeat the validation sequence above. The voice step may access Wikidata; the finalizer only reads existing facts and successful cached pageview responses.
+
+The fetcher identifies itself with a User-Agent, caches requests in ignored `/.data-cache/`, and resumes cached responses. Pageview fetches are sequential and stop further uncached requests on HTTP 429. Delete the relevant `wd-*.json` cache entries when a genuinely fresh Wikidata read is required; new batch IDs produce distinct cache keys, but unchanged batches otherwise reuse their cached source snapshot. Remove the relevant pageview entries to refetch those observations. Review `metadata.json`, rejected sources and `quality.json` before committing a new snapshot. Network access is required only for refresh, not for ordinary builds or gameplay. No new bulk fetch was performed while repairing this entry point; the orchestration and missing-facts guard were verified with isolated fixtures/static checks, and a complete new network refresh remains unverified.
 
 The script's fixed pageview window is intentional for a reproducible launch prior. Update the start/end dates together when preparing a new annual snapshot. Production D1 player data must never be committed to Git or overwritten by this generator.
