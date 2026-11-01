@@ -1,6 +1,6 @@
 # Reelillion design research
 
-Reviewed October 31, 2026. Product authority: the root requirements document, v1.0 with v1.1 rules and v1.2 theme configuration.
+Initial review: October 31, 2026. The sections below retain the original MVP design rationale. The November 1, 2026 v1.3 update at the end supersedes the homepage presentation with the approved end-credits and pixel-cinema direction; its product authority is [requirements-v1.3.md](requirements-v1.3.md).
 
 ## Audience and purpose
 
@@ -41,3 +41,33 @@ Primary pages were checked with browser/web tools. Framed and MovieGrid comparis
 ## Validation to be completed by integration owner
 
 Inspect real pages at 390px, 768px and 1440px. Verify overflow, keyboard focus, mobile navigation, game lifecycle states and all links. Content pages have not independently completed the final browser review at the time of this draft; the root agent owns consolidated review evidence.
+
+## v1.3 — end credits inside an original pixel cinema
+
+Updated November 1, 2026 (Asia/Shanghai), after the user approved the end-credits concept and required the first screen to be the game interface itself. This section replaces the original side-by-side marketing hero as the homepage's design direction.
+
+### References rechecked
+
+The integration owner reopened [Krillion](https://krillion.io/) and [Cosmillion](https://cosmillion.com/) in the embedded browser on November 1, 2026. Their useful shared pattern is a single themed scene with a central, immediately available start action. Krillion establishes underwater depth around the play area; Cosmillion establishes space and launch imagery around its primary action. Both make the setting and the rare-answer premise visible before starting.
+
+Reelillion borrows that clarity and continuous scene, while drawing its own cinema interior. No competitor images, sprites, layout code, rocket, submarine or scenery are reused. The scene is not a decorative illustration beside the game: its central screen contains the ready state, question, answer feedback and final result. Starting a game updates that screen in place without a separate destination or an extra entrance step. The timer starts only after the player chooses to play.
+
+### Visual system
+
+- A large, dark central screen is the visual anchor. Original pixel curtains, warm brass-colored lamps, stepped screen trim, EXIT signs and three rows of navy seats establish an unmistakable cinema around it.
+- The retained navy and cream palette connects the update to the original brand. Coral is used for the curtains, headline emphasis and main action; warm gold marks lamps, small architectural accents and important score moments. The scenery frames the game without obscuring text or suggestions.
+- Self-hosted Silkscreen supplies the wordmark, selected controls and decorative pixel labels. DM Sans and Space Grotesk carry readable instructions, questions, input text and longer content. Font license files remain beside the local font assets. Important rules use readable text rather than the smallest decorative pixel size.
+- The ready screen states the rare-answer premise and seven-question format, with **Play today's reel** as the action. It replaces the ambiguous initial **Roll the credits** button; the credits wording remains appropriate as the game's theme and result language.
+- Screen height follows its contents instead of forcing a widescreen aspect ratio. Narrow layouts keep the question and controls usable; desktop spacing is compact enough for the surrounding seat rows to remain visible in a normal-height window.
+
+### Motion and progression
+
+The film-production roles are game milestones along a cumulative score axis, not a hierarchy of workers or a claim about a universal credit order. The existing seven questions and five per-answer rarity bands remain intact. A rarer valid answer moves farther along the separate credits stage; a zero-point answer does not move it.
+
+Only that bounded stage scrolls during answer settlement. The page, question area and input remain stable, and the player explicitly starts the next timed question. System reduced-motion preferences and the in-game motion control replace moving transitions with static state changes. A strong completed score unlocks the short post-credits scene; a perfect score receives its special variation. These visual rewards derive from stored scores and do not change scoring or server deadlines.
+
+### Social preview and review evidence
+
+The original [social-credits.svg](../public/images/social-credits.svg) and its rendered [social.png](../public/images/social.png) now use the cinema and credits presentation so the shared page preview matches the game. They contain original shapes and text, with no film poster or still.
+
+The second-round desktop and mobile screenshots (`round2-home-1440.jpg` and `round2-home-390.jpg`, held in local release artifacts) show the revised readable rule line, clearer start action and more compact theatre composition. The 1440px image includes the full seat rows; the 390px image keeps the complete start control, timing option and seats within the captured view. No additional blocking visual defect was identified from those two static images. Final 390/768/1440px interaction, motion and lifecycle acceptance remains the integration owner's consolidated browser review; screenshots alone are not evidence for those behaviors.

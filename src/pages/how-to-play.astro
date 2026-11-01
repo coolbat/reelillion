@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { CREDIT_MILESTONES, MAX_CREDITS_SCORE, POST_CREDITS_SCORE } from '../lib/credits';
 const tiers = [
   ['🍿', 'Blockbuster', '10', '10% or more'],
   ['🎟️', 'Matinee', '30', '3% to under 10%'],
@@ -8,23 +9,40 @@ const tiers = [
   ['🏆', 'One in a Reelillion', '100', 'Under 0.1%'],
 ];
 ---
-<Layout title="How to play Reelillion · Rules & rarity scoring" description="Seven movie prompts, 20 seconds each. Learn how answers, spelling, rarity points, daily streaks and accessible mode work in Reelillion.">
+<Layout title="How to play Reelillion · Rarity points & the credits" description="Seven movie prompts, 20 seconds each. Learn how rare answers move you through the credits, unlock the post-credits scene, and build your daily streak.">
   <article class="content-page">
-    <p class="eyebrow">A quick director's briefing</p>
-    <h1 class="page-title">Good films.<br />Great deep cuts.</h1>
-    <p class="lede">Seven prompts. One film for each. The less obvious your answer, the more points you earn.</p>
+    <p class="eyebrow">Before the credits roll</p>
+    <h1 class="page-title">Stay for the<br />rare answers.</h1>
+    <p class="lede">Seven movie prompts. One film for each. The rarer your answers, the further the credits roll across the cinema screen.</p>
     <div class="info-grid rules-steps">
       <section class="info-card"><span class="step-number">01</span><h2>Read the prompt</h2><p>Everyone gets the same seven daily questions. A new set arrives at midnight in New York.</p></section>
       <section class="info-card"><span class="step-number">02</span><h2>Name your film</h2><p>You have 20 seconds. Type a title, then submit it. There is no bonus for answering faster.</p></section>
-      <section class="info-card"><span class="step-number">03</span><h2>Find your deep cut</h2><p>Valid answers earn 10–100 points. Finish all seven for a score out of 700, then share without spoilers.</p></section>
+      <section class="info-card"><span class="step-number">03</span><h2>Roll the credits</h2><p>Valid answers earn 10–100 points and move the credits along. Finish all seven, then share where you landed.</p></section>
     </div>
     <section class="prose">
-      <h2 class="section-title">The five billing positions</h2>
+      <h2 class="section-title">Start on the big screen</h2>
+      <p>The home page opens straight into our pixel cinema. Choose your time allowance, then select “Play today’s reel” to start in the same screen. The clock waits for your click. After an answer locks, take a moment to see your points; the next question starts when you choose to continue.</p>
+      <h2 class="section-title">Five answer rarity tiers</h2>
       <p>Points use an estimated selection share for that prompt. While the audience is small, Wikipedia pageviews and Wikidata language coverage provide a popularity estimate. Films without measured pageviews use language coverage as an explicit fallback. The game labels this estimate separately from actual player choices.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Rarity scoring table">
-        <table><thead><tr><th scope="col">Your billing</th><th scope="col">Points</th><th scope="col">Estimated share</th></tr></thead><tbody>{tiers.map(([emoji, name, points, share]) => <tr><th scope="row"><span aria-hidden="true">{emoji}</span> {name}</th><td>+{points}</td><td>{share}</td></tr>)}</tbody></table>
+        <table><thead><tr><th scope="col">Answer tier</th><th scope="col">Points</th><th scope="col">Estimated share</th></tr></thead><tbody>{tiers.map(([emoji, name, points, share]) => <tr><th scope="row"><span aria-hidden="true">{emoji}</span> {name}</th><td>+{points}</td><td>{share}</td></tr>)}</tbody></table>
       </div>
       <p>Your points lock when you submit. Later answers cannot lower your score. A missed, skipped or incorrect answer earns zero.</p>
+      <h2 class="section-title">Ten milestones through the credits</h2>
+      <p>Your seven answers add up to one score out of {MAX_CREDITS_SCORE}. That total determines how far into the credits you go. A 100-point answer takes you ten times as far as a 10-point answer; zero points leave you where you are.</p>
+      <p>The five tiers above describe individual answers. The ten milestones below describe your running total for the whole game. They are playful signposts through our credits, not a ranking of film jobs or a claim that every movie lists its crew in this order.</p>
+      <div class="table-scroll credits-table" tabindex="0" role="region" aria-label="Cumulative credits milestones">
+        <table>
+          <thead><tr><th scope="col">Credits milestone</th><th scope="col">Total points needed</th></tr></thead>
+          <tbody>{CREDIT_MILESTONES.map((milestone) => <tr><th scope="row">{milestone.label}{milestone.id === 'opening' ? <small>Starting position</small> : null}</th><td>{milestone.minimum === 0 ? '0' : `${milestone.minimum}+`}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p>You begin at the Opening frame. Each locked answer moves the separate credits display while the question and controls stay in place. You can skip the movement; your score and the next question’s time allowance stay the same.</p>
+      <h2 class="section-title">Stay for the post-credits scene</h2>
+      <p>Every completed game gets a curtain call, your full results and the films you might have missed. Finish all seven questions with at least {POST_CREDITS_SCORE} points to unlock the post-credits scene. A perfect {MAX_CREDITS_SCORE} unlocks a special version.</p>
+      <p>Reaching {POST_CREDITS_SCORE} before the final question puts you at the last milestone; the scene waits until your game is complete. You can skip or replay the finale from your results. Reduced motion keeps the reward visible without the animated sequence.</p>
+      <h2 class="section-title">Share your place in the credits</h2>
+      <p>Your spoiler-free card names the milestone you reached and includes your total, seven answer icons, game mode and 20- or 40-second allowance. It never includes movie answers. Where available, it also includes your actual Daily percentile and local streak. Share or copy it, or challenge a friend to the same Daily or Archive questions.</p>
       <h2 class="section-title">What counts as an answer?</h2>
       <p>A feature film in our catalog that fits the question. Animation and feature documentaries count; television series and shorts do not. Titles have English Wikipedia entries, and sequels count as separate films. Classifications and cast credits follow Wikidata; its genre boundaries can be broad.</p>
       <p>Capitalization, punctuation and leading “The” or “A” are ignored. Common aliases and small spelling mistakes are supported, with stricter matching for short titles and sequel numbers. If a title has remakes, the question's date or director restriction helps choose the right version. For an unrestricted title, the more widely known matching version determines rarity.</p>
@@ -33,14 +51,14 @@ const tiers = [
       <h2 class="section-title">One daily screening</h2>
       <p>You get one scored Daily attempt per device. Leaving or reloading during a question forfeits that question. Your other answers are saved, and you can continue the round. Finishing consecutive Daily games builds a streak on this browser.</p>
       <h2 class="section-title">A little more time</h2>
-      <p>Enable accessible mode before starting to receive 40 seconds per question. Your share card includes ⏱ so friends know which mode you used. Keyboard navigation and reduced-motion preferences are supported.</p>
+      <p>Enable Extra time before starting to receive 40 seconds per question. Your share card includes 40s and ⏱ so friends know which allowance you used. Keyboard navigation and reduced-motion preferences are supported; credits movement and finales do not use up your next question’s time.</p>
       <h2 class="section-title">The encore</h2>
       <p>Results show your answers, their rarity and other films you could have named. Actual player statistics appear only when there is data. Archive and practice sessions never change today's answer frequencies or your Daily streak.</p>
       <p><a href="/archive/">Visit the archive</a> for recent games, or <a href="/unlimited/">try a practice screening</a>.</p>
     </section>
-    <a class="button" href="/">Take your seat <span aria-hidden="true">↗</span></a>
+    <a class="button" href="/">Back to the cinema <span aria-hidden="true">→</span></a>
   </article>
 </Layout>
 <style>
-  .rules-steps{margin-block:3rem;grid-template-columns:repeat(3,1fr)}.step-number{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:var(--coral,#f27665);letter-spacing:.12em}.rules-steps h2{font-size:1.15rem;margin-block:.7rem}.table-scroll{overflow-x:auto;max-width:100%;margin-block:1.5rem}.table-scroll:focus-visible{outline:2px solid var(--mint,#afd5c4);outline-offset:5px}table{width:100%;border-collapse:collapse;text-align:left;font-size:.92rem}th,td{padding:1rem .75rem;border-bottom:1px solid #f5efdf26}thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#afd5c4}tbody th{font-weight:500;min-width:12rem}td:last-child{white-space:nowrap}@media(max-width:720px){.rules-steps{grid-template-columns:1fr}}
+  .content-page{font-family:var(--body,'DM Sans',sans-serif)}.rules-steps{margin-block:3rem;grid-template-columns:repeat(3,1fr)}.step-number{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:var(--coral,#f27665);letter-spacing:.12em}.rules-steps h2{font-size:1.15rem;margin-block:.7rem}.table-scroll{overflow-x:auto;max-width:100%;margin-block:1.5rem}.table-scroll:focus-visible{outline:2px solid var(--mint,#afd5c4);outline-offset:5px}table{width:100%;border-collapse:collapse;text-align:left;font-size:.92rem}th,td{padding:1rem .75rem;border-bottom:1px solid #f5efdf26}thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#afd5c4}tbody th{font-weight:500;min-width:12rem}td:last-child{white-space:nowrap}.credits-table tbody th{min-width:0}.credits-table th:last-child{min-width:7rem}.credits-table small{display:block;font-size:.75rem;color:var(--muted,#b7bfce);font-weight:400;margin-top:.15rem}@media(max-width:720px){.rules-steps{grid-template-columns:1fr}.credits-table th,.credits-table td{padding:.85rem .5rem}.credits-table thead th{font-size:.65rem;letter-spacing:.04em}}
 </style>

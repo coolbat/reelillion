@@ -1,0 +1,336 @@
+.cinema {
+  --cinema-wall: #132039;
+  --cinema-curtain: #9e494e;
+  --cinema-curtain-shadow: #713642;
+  --cinema-curtain-light: #b75c5d;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1100px;
+  margin: 14px auto 0;
+  padding-top: 0;
+}
+.cinema-marquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 16px;
+  color: #d5b47a;
+  font-family: var(--pixelfont, "Space Grotesk", sans-serif);
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+.cinema-marquee-rule {
+  width: 48px;
+  height: 2px;
+  background: #8d734b;
+  position: relative;
+}
+.cinema-marquee-rule::after {
+  content: "";
+  position: absolute;
+  inset: -2px auto auto 0;
+  width: 6px;
+  height: 6px;
+  background: #d5b47a;
+}
+.cinema-marquee-rule:last-child::after {
+  left: auto;
+  right: 0;
+}
+.cinema-stage {
+  position: relative;
+  padding: 22px 88px 20px;
+  background: var(--cinema-wall);
+  border-top: 4px solid #2f2c3e;
+  box-shadow: 0 5px 0 #0a1325;
+}
+.cinema-wall {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: 54px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 20px,
+    #24314b 20px 22px
+  );
+  pointer-events: none;
+}
+.cinema-wall--left {
+  left: 0;
+  border-right: 3px solid #0e192e;
+}
+.cinema-wall--right {
+  right: 0;
+  border-left: 3px solid #0e192e;
+}
+.cinema-sconce {
+  position: absolute;
+  top: 34%;
+  left: 19px;
+  width: 16px;
+  height: 31px;
+  background: #5b4b41;
+  border-top: 4px solid #a78b58;
+  border-bottom: 4px solid #a78b58;
+}
+.cinema-sconce i {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  background: #e0bb7e;
+}
+.cinema-sconce i:first-child {
+  left: 2px;
+  background: #ffe3a8;
+}
+.cinema-sconce i:nth-child(2) {
+  left: 6px;
+}
+.cinema-sconce i:last-child {
+  left: 10px;
+  background: #bc925d;
+}
+.cinema-exit {
+  position: absolute;
+  bottom: 17px;
+  left: 8px;
+  width: 36px;
+  padding: 4px 2px 3px;
+  color: #b0d5c0;
+  background: #1c3c3e;
+  border: 2px solid #426c62;
+  font: 7px/1.4 var(--pixelfont, "Space Grotesk", sans-serif);
+  text-align: center;
+  letter-spacing: 1px;
+}
+.cinema-exit span {
+  display: block;
+  font: 12px/1 sans-serif;
+}
+.cinema-curtain {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 9px;
+  width: 44px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--cinema-curtain-shadow) 0 7px,
+    var(--cinema-curtain) 7px 15px,
+    var(--cinema-curtain-light) 15px 19px,
+    var(--cinema-curtain) 19px 27px
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 91%,
+    90% 91%,
+    90% 94%,
+    72% 94%,
+    72% 97%,
+    45% 97%,
+    45% 99%,
+    0 99%
+  );
+  pointer-events: none;
+}
+.cinema-curtain--left {
+  left: 52px;
+}
+.cinema-curtain--right {
+  right: 52px;
+  transform: scaleX(-1);
+}
+.cinema-pelmet {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 52px;
+  right: 52px;
+  height: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  pointer-events: none;
+  background: #6b3240;
+  border-top: 4px solid #c77d6d;
+}
+.cinema-pelmet span {
+  height: 13px;
+  background: #a24f54;
+  border-bottom: 4px solid #793b48;
+}
+.cinema-pelmet span:nth-child(even) {
+  height: 17px;
+  background: #b45b5b;
+}
+.cinema-screen-frame {
+  position: relative;
+  z-index: 1;
+  padding: 7px;
+  background: #b9b49e;
+  border: 4px solid #716d68;
+  box-shadow:
+    0 5px 0 #0a1428,
+    0 -2px 0 #d8d2ba;
+}
+.cinema-screen {
+  position: relative;
+  min-width: 0;
+  background: #0b1427;
+  border: 2px solid #eee5cb;
+}
+.cinema-screen-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+}
+.cinema-stage-lip {
+  position: absolute;
+  height: 12px;
+  z-index: 3;
+  bottom: -8px;
+  left: 48px;
+  right: 48px;
+  background: #44404a;
+  border-top: 4px solid #71615c;
+  box-shadow: 0 5px 0 #22283a;
+  pointer-events: none;
+}
+.cinema-auditorium {
+  position: relative;
+  z-index: 4;
+  height: 130px;
+  margin-top: 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cinema-seats {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cinema-house-note {
+  margin: 7px 0 0;
+  color: #96a4bb;
+  text-align: center;
+  font-family: var(--pixelfont, "Space Grotesk", sans-serif);
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  line-height: 1.7;
+}
+@media (max-width: 1000px) {
+  .cinema-stage {
+    padding-inline: 60px;
+  }
+  .cinema-wall {
+    width: 36px;
+  }
+  .cinema-sconce {
+    left: 10px;
+  }
+  .cinema-exit {
+    left: 3px;
+    width: 29px;
+    font-size: 6px;
+  }
+  .cinema-curtain {
+    width: 36px;
+  }
+  .cinema-curtain--left {
+    left: 34px;
+  }
+  .cinema-curtain--right {
+    right: 34px;
+  }
+  .cinema-pelmet {
+    left: 34px;
+    right: 34px;
+  }
+  .cinema-stage-lip {
+    left: 28px;
+    right: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .cinema {
+    width: 100%;
+    margin: 13px auto 0;
+    padding-top: 0;
+  }
+  .cinema-marquee {
+    margin-bottom: 17px;
+    font-size: 8px;
+    gap: 9px;
+    letter-spacing: 1px;
+  }
+  .cinema-marquee-rule {
+    width: 20px;
+  }
+  .cinema-stage {
+    padding: 17px 6px 17px;
+    border-top-width: 3px;
+  }
+  .cinema-wall {
+    display: none;
+  }
+  .cinema-curtain {
+    width: 8px;
+    bottom: 7px;
+  }
+  .cinema-curtain--left {
+    left: 0;
+  }
+  .cinema-curtain--right {
+    right: 0;
+  }
+  .cinema-pelmet {
+    left: 0;
+    right: 0;
+    height: 12px;
+    border-top-width: 3px;
+  }
+  .cinema-pelmet span {
+    height: 8px;
+    border-bottom-width: 2px;
+  }
+  .cinema-pelmet span:nth-child(even) {
+    height: 10px;
+  }
+  .cinema-screen-frame {
+    padding: 3px;
+    border-width: 2px;
+  }
+  .cinema-screen {
+    border-width: 1px;
+  }
+  .cinema-stage-lip {
+    left: 5px;
+    right: 5px;
+    height: 8px;
+    bottom: -5px;
+    border-top-width: 3px;
+  }
+  .cinema-auditorium {
+    margin-top: 12px;
+    height: 88px;
+  }
+  .cinema-seats {
+    width: 680px;
+    height: auto;
+    max-width: none;
+    margin-left: calc((100% - 680px) / 2);
+  }
+  .cinema-house-note {
+    margin-top: 6px;
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+}

@@ -4,6 +4,12 @@ A daily movie game for uncommon answers. Seven prompts, twenty seconds per promp
 
 The product uses English copy and a shared New York daily schedule. Full rules are in [`docs/api.md`](docs/api.md) and the source requirements document. [`docs/requirements-coverage.md`](docs/requirements-coverage.md) records implemented, pending and planned scope without treating development as production acceptance.
 
+## v1.3 — the end-credits cinema
+
+The home page is the game: an original pixel cinema with a central screen. Starting, answering and viewing results happen in place. Rare answers advance a separate credits roll; the seven-question, five-tier scoring model and server deadlines are unchanged. Ten cumulative milestones end at the Post-Credits Scene (600+ on completion), with a special 700-point ending. Motion can be skipped or reduced, and spoiler-free sharing includes the final milestone, seven answers and the selected mode/time.
+
+The implementation contract is [`docs/requirements-v1.3.md`](docs/requirements-v1.3.md); design rationale is in [`docs/design-research.md`](docs/design-research.md). [`docs/browser-review-v1.3.md`](docs/browser-review-v1.3.md) records three review rounds, real browser interactions and verification limits. No D1 migration or rescoring of historical games is needed.
+
 ## Run locally
 
 Use **Node.js 24** (see `.nvmrc`). Python 3 is required for source-data refreshes and the data-tool checks.
@@ -32,7 +38,7 @@ npm run build
 npx wrangler deploy --dry-run
 ```
 
-Tests cover matching and aliases, remakes and sequel numbers, score thresholds, the 200-answer prior, New York/DST resets, SQL session ownership and locking, mode isolation, date expiry, deterministic schedules and the deployment gate. They do not replace a real production D1 test, editorial review, or real-player score calibration.
+Tests cover all cumulative credits boundaries, zero/completed/perfect endings, spoiler-free seven-answer sharing, matching and aliases, remakes and sequel numbers, score thresholds, the 200-answer prior, New York/DST resets, SQL session ownership and locking, mode isolation, date expiry, deterministic schedules and the deployment gate. They do not replace a real production D1 test, editorial review, or real-player score calibration.
 
 The GitHub [`Quality` workflow](.github/workflows/quality.yml) runs these checks on Node 24 for pushes and pull requests to `main`. The dry run is a build/configuration check, not a deployment.
 

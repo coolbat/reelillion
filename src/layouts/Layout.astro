@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-interface Props { title?: string; description?: string; }
-const { title = 'Reelillion — The daily movie game for uncommon minds', description = 'Seven movie prompts. Twenty seconds each. Name the film nobody else thinks of in Reelillion, the free daily movie trivia game where rare answers win.' } = Astro.props;
+interface Props { title?: string; description?: string; cinema?: boolean; }
+const { title = 'Reelillion — The daily movie game for uncommon minds', description = 'Seven movie prompts. Twenty seconds each. Name the film nobody else thinks of in Reelillion, the free daily movie trivia game where rare answers win.', cinema = false } = Astro.props;
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site);
 ---
@@ -23,8 +23,9 @@ const canonical = new URL(path, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    {cinema && <link rel="preload" href="/fonts/silkscreen.woff2" as="font" type="font/woff2" crossorigin />}
   </head>
-  <body>
+  <body class:list={{ 'cinema-page': cinema }}>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-wrap">
       <header class="site-header">
@@ -37,7 +38,7 @@ const canonical = new URL(path, Astro.site);
           <a href="/archive/" aria-current={path === '/archive/' ? 'page' : undefined}>Archive</a>
           <a href="/packs/" aria-current={path.startsWith('/packs/') ? 'page' : undefined}>Film clubs <span class="tiny-star">✧</span></a>
         </nav>
-        <a class="header-help" href="/how-to-play/"><span class="help-mark">?</span><span>How to play</span></a>
+        <a class="header-help" href="/how-to-play/" aria-label="How to play"><span class="help-mark">?</span><span>How to play</span></a>
         <details class="mobile-menu"><summary aria-label="Open navigation"><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="/">Daily game</a><a href="/archive/">Archive</a><a href="/packs/">Film clubs</a><a href="/unlimited/">Unlimited</a><a href="/how-to-play/">How to play</a></nav></details>
       </header>
       <main id="main"><slot /></main>

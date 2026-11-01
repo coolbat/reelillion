@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d172b"/>
+<text x="600" y="52" fill="#e9c581" font-family="monospace" font-size="17" letter-spacing="5" text-anchor="middle">THE REELILLION PICTURE HOUSE</text>
+<path fill="#723743" d="M70 76h1060v438H70z"/><path fill="#a34e54" d="M81 86h1038v418H81z"/>
+<path fill="#c7796b" d="M81 86h1038v7H81zM92 93h10v405H92zM1098 93h10v405h-10z"/>
+<path fill="#bdb7a2" d="M119 110h962v384H119z"/><path fill="#f5efdf" d="M125 116h950v372H125z"/><path fill="#0b1427" d="M132 123h936v358H132z"/>
+<g fill="#e9c581"><path d="M32 247h16v35H32zM1152 247h16v35h-16z"/><path d="M35 250h6v28h-6zM1155 250h6v28h-6z" fill="#f5efdf"/></g>
+<text x="600" y="181" fill="#f5efdf" font-family="monospace" font-weight="bold" font-size="44" letter-spacing="5" text-anchor="middle">REELILLION.</text>
+<text x="600" y="253" fill="#f5efdf" font-family="sans-serif" font-weight="bold" font-size="44" text-anchor="middle">How far into the</text>
+<text x="600" y="307" fill="#f27665" font-family="sans-serif" font-weight="bold" font-size="48" text-anchor="middle">credits can you go?</text>
+<text x="600" y="351" fill="#b7c1d1" font-family="sans-serif" font-size="22" text-anchor="middle">Seven movie questions. Rarer answers roll further.</text>
+<path fill="#824149" d="M426 384h356v55H426z"/><path fill="#f27665" d="M422 380h356v55H422z"/>
+<text x="600" y="415" fill="#101c36" font-family="monospace" font-weight="bold" font-size="22" letter-spacing="1" text-anchor="middle">PLAY TODAY’S REEL ▸</text>
+<path fill="#5b5057" d="M66 510h1068v12H66z"/><path fill="#8a7469" d="M66 510h1068v4H66z"/>
+<defs><g id="seat"><path fill="#32415c" d="M8 0h30v5h6v40H2V5h6z"/><path fill="#50617c" d="M8 0h30v4H8z"/><path fill="#22334d" d="M0 27h7v24H0zM39 27h7v24h-7zM6 41h34v9H6z"/></g></defs>
+<g transform="translate(25 539)"><use href="#seat"/><use href="#seat" x="55"/><use href="#seat" x="110"/><use href="#seat" x="165"/><use href="#seat" x="220"/><use href="#seat" x="275"/><use href="#seat" x="330"/><use href="#seat" x="385"/><use href="#seat" x="440"/><use href="#seat" x="495"/><use href="#seat" x="605"/><use href="#seat" x="660"/><use href="#seat" x="715"/><use href="#seat" x="770"/><use href="#seat" x="825"/><use href="#seat" x="880"/><use href="#seat" x="935"/><use href="#seat" x="990"/><use href="#seat" x="1045"/><use href="#seat" x="1100"/></g>
+<text x="600" y="615" fill="#a7b4c9" font-family="monospace" font-size="14" letter-spacing="2" text-anchor="middle">FREE ADMISSION · NO SIGN-UP · REELILLION.COM</text>
+</svg>
